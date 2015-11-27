@@ -11,13 +11,14 @@ from owade.fileExtraction.hash import Hash
 from owade.fileExtraction.mount import Mount
 from owade.fileExtraction.umount import Umount
 from owade.models import HardDrive, Partition, File, FileInfo
+from owade.constants import *
 
 
 class GetFiles(Process):
     def __init__(self, internLog, terminalLog, hardDrive, overWrite):
         Process.__init__(self, internLog, terminalLog)
-        self.hardDrive_ = hardDrive
-        self.overWrite_ = overWrite
+        self.hardDrive = hardDrive
+        self.overWrite = overWrite
 
     def getSAM(self, myPath, filesystemObject):  # Gets the SAM file
         self.internLog_.addLog("Getting SAM", 1)
@@ -33,7 +34,7 @@ class GetFiles(Process):
         outfile.close()
 
     def getSYSTEM(self, myPath, filesystemObject):  # Gets the SYSTEM file
-        self.internLog_.addLog("Getting SYSTE", 1)
+        self.internLog_.addLog("Getting SYSTEM", 1)
         fileobject = filesystemObject.open(systemPath)
         fullPath = myPath + "/SYSTEM/"
         try:
@@ -51,6 +52,7 @@ class GetFiles(Process):
         protectPath = "/Users/" + userDir + protectDir
         try:
             self.get_All(protectPath, myPath, filesystemObject)  # Search recursive for the files
+            self.internLog_.addLog("[++++]User: " + userDir + ", is  valid, masterkey obteined[++++]y", 1)
             return True  # It has found the file/s
         except:
             self.internLog_.addLog("[++++]User: " + userDir + ", is not valid, it doesn't have masterkey[++++]y", 1)
@@ -174,17 +176,17 @@ class GetFiles(Process):
         except:
             self.internLog_.addLog("[++++]Can't find firefox history database[++++]", 1)
 
-    def run(
-            self):  # Main function for extract the important files from the harddrive (only extract files from NTFS partitions)
+    def run(self):  # Main function for extract the important files from the harddrive (only extract files from NTFS partitions)
         self.internLog_.addLog("ProgramAnalyze process launched", 1)
-        imagefile = IMAGE_DIR + self.harddrive
-
-        imagehandle = pytsk3.Img_Info(imagefile)
+        print self.hardDrive.image_path()
+        print self.hardDrive.log_path()
+        imagehandle = pytsk3.Img_Info(self.hardDrive.image_path())
         partitionTable = pytsk3.Volume_Info(imagehandle)
 
         for partition in partitionTable:
-            myPath = FILE_DIR + self.harddrive + "_" + str(partition.addr)  # Add partition to myPath
-            if partition.desc == self.ntfs:
+            myPath = FILE_DIR + "/" + self.hardDrive.serial + "_" + str(partition.addr)  # Add partition to myPath
+            myPath = str(myPath)
+            if partition.desc == "NTFS (0x07)":
                 print partition.addr, partition.desc, "%ss(%s)" % (
                     partition.start, partition.start * 512), partition.len
                 filesystemObject = pytsk3.FS_Info(imagehandle, offset=partition.start * 512)  # Mount each partition
@@ -193,7 +195,7 @@ class GetFiles(Process):
                     self.getSYSTEM(myPath, filesystemObject)  # Gets the SYSTEM file
                     # Resto de modulos sin usuario
                     print "-", "USERS:"
-                    directoryObject = filesystemObject.open_dir(self.usersPath)  # Open users directory
+                    directoryObject = filesystemObject.open_dir("/Users/")  # Open users directory
                     for entryObject in directoryObject:
                         userDir = entryObject.info.name.name
                         if userDir != '.' and userDir != '..':  # Quit . and .. directories
@@ -210,5 +212,6 @@ class GetFiles(Process):
 
                                 # Resto de modulos de navegador
                                 print "Done"
-                except:
+                except Exception as e:
+                    print e
                     print "[++++]Partition has no user information[++++]"

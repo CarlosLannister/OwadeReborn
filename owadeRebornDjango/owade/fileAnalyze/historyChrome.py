@@ -4,7 +4,10 @@ from owade.constants import *
 
 class GetChromeHistory:
 
-    def getChromeHistoryInfo(self, myPath):
+    def __init__(self):
+        pass
+
+    def getChromeHistoryData(self, myPath):
         """
             From https://github.com/OsandaMalith/ChromeFreak/blob/master/ChromeFreak.py CC license
         """
@@ -52,7 +55,7 @@ class GetChromeHistory:
                 print e
             return None
 
-    def getChromeDowloadInfo(self, myPath):
+    def getChromeDowloadData(self, myPath):
         """
             From https://github.com/OsandaMalith/ChromeFreak/blob/master/ChromeFreak.py CC license
         """
@@ -101,6 +104,6 @@ class GetChromeHistory:
             return None
 
     def main(self, myPath):
-        placesValues = self.getChromeHistoryInfo(myPath)
-        downloadValues = self.getChromeDowloadInfo(myPath)
+        placesValues = self.getChromeHistoryData(myPath)
+        downloadValues = self.getChromeDowloadData(myPath)
         return {self.__class__.__name__:{'history':placesValues, 'download':downloadValues}}

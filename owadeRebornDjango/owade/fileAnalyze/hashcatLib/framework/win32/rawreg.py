@@ -19,8 +19,9 @@
 @contact:      bdolangavitt@wesleyan.edu
 """
 
-from framework.newobj import Obj,Pointer
 from struct import unpack
+
+from owade.fileAnalyze.hashcatLib.framework import *
 
 ROOT_INDEX = 0x20
 LH_SIG = unpack("<H","lh")[0]

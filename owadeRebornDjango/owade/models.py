@@ -20,7 +20,7 @@ class HardDrive(models.Model):
         return "%s" % (self.serial)
     ## The path to the image of the hard drive, could be deleted
     def image_path(self):
-        return "%s/%s_image" % (IMAGE_DIR, self.serial)
+        return "%s/%s" % (IMAGE_DIR, self.serial)
     ## The path to the ddrescue log of the hard drive, could be deleted
     def log_path(self):
         return "%s/%s_log_ddrescue" % (IMAGE_DIR, self.serial)

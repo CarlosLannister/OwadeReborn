@@ -19,13 +19,15 @@
 @contact:      bdolangavitt@wesleyan.edu
 """
 
-from framework.win32.rawreg import *
-from framework.addrspace import HiveFileAddressSpace
-from framework.win32.hashdump import get_bootkey
-from framework.win32.lsasecrets import get_secret_by_name,get_lsa_key
+from struct import unpack
+
 from Crypto.Hash import HMAC
 from Crypto.Cipher import ARC4, AES
-from struct import unpack
+
+from owade.fileAnalyze.hashcatLib.framework import HiveFileAddressSpace
+from owade.fileAnalyze.hashcatLib.framework import get_bootkey
+from owade.fileAnalyze.hashcatLib.framework import get_secret_by_name,get_lsa_key
+
 
 def get_nlkm(secaddr, lsakey, vista):
     return get_secret_by_name(secaddr, 'NL$KM', lsakey, vista)

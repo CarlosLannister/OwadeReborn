@@ -62,13 +62,13 @@ DATABASE_PORT='5432'
 #################
 ##Where to stock disk image after ddrescue
               #/media/USERNAME/HDNAME/
-EXT_HDRIVE = subprocess.check_output("find /media -name storage", shell=True).rstrip() + "/../"   #Must change
+EXT_HDRIVE = subprocess.check_output("find /media -name storage", shell=True).rstrip()
 
-IMAGE_DIR = EXT_HDRIVE + "storage/image"
-IMAGE_FTP = EXT_HDRIVE + "storage/ftp"
+IMAGE_DIR = EXT_HDRIVE + "/image"
+IMAGE_FTP = EXT_HDRIVE + "/ftp"
 checkConstant(IMAGE_DIR)
 ##Where to stock files
-FILE_DIR = EXT_HDRIVE + "storage/file"
+FILE_DIR = EXT_HDRIVE + "/file"
 checkConstant(FILE_DIR)
 
 

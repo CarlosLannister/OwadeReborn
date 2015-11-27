@@ -1,11 +1,22 @@
-import sys
-import lib
 import subprocess
 
+import lib
 
-class Pwdump:
 
-    def main(system, sam):
+class PwDump(object):
+
+    def __init__(self):
+        pass
+
+    def main(self, system, sam):
+        """
+
+
+        :rtype : object
+        :param system:
+        :param sam:
+        :return:
+        """
         user_hash = lib.dump_file_hashes(system, sam)
         elementos = user_hash.items()
         final_pass = dict()

@@ -19,10 +19,11 @@
 @contact:      bdolangavitt@wesleyan.edu
 """
 
-from framework.object import *
-from framework.types import regtypes as types
 from operator import itemgetter
 from struct import unpack
+
+from owade.fileAnalyze.hashcatLib.framework import regtypes as types
+
 
 def get_ptr_type(structure, member):
     """Return the type a pointer points to.

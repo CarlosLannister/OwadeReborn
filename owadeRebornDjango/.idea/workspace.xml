@@ -2,15 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd9f9f2e-df87-475c-9234-fed37aa2d728" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/chrome.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/chrome.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/__init__.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/SAM" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/SYSTEM" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/changes.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/contact.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/credits.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/rules.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/user_manuals.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M0.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M0.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M10.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M10.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M100.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M100.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1000.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1000.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M101.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M101.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1100.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1100.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1400.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1400.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1410.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1410.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1420.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1420.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1600.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1600.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1700.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1700.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1710.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1710.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1720.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1720.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1731.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1731.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1800.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1800.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M200.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M200.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M300.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M300.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M400.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M400.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M500.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M500.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M800.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M800.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M900.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M900.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A1.M0.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A1.M0.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A3.M0.hash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A3.M0.word" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/scriptBuscador.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/virusScan.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/constants.py" afterPath="$PROJECT_DIR$/owade/constants.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/domcachedump.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/domcachedump.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileExtraction/getFiles.py" afterPath="$PROJECT_DIR$/owade/fileExtraction/getFiles.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/hashdump.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/hashdump.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/historyChrome.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/historyChrome.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/historyFirefox.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/historyFirefox.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/lsasecrets.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/lsasecrets.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/models.py" afterPath="$PROJECT_DIR$/owade/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/newobj.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/newobj.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/owade.iml" afterPath="$PROJECT_DIR$/.idea/owade.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/scriptBuscador.py" afterPath="$PROJECT_DIR$/owade/scriptBuscador.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/rawreg.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/rawreg.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/rockyou.txt" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/rockyou.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="owade.iws" />
@@ -25,8 +88,9 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/owade$manage.coverage" NAME="manage Coverage Results" MODIFIED="1446459641466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/ui" />
+    <SUITE FILE_PATH="coverage/owade$manage__1_.coverage" NAME="manage (1) Coverage Results" MODIFIED="1448662392350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/owade$main.coverage" NAME="main Coverage Results" MODIFIED="1446205624867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/owade$manage.coverage" NAME="manage Coverage Results" MODIFIED="1448668188719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -40,13 +104,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="scriptBuscador.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/owade/scriptBuscador.py">
+      <file leaf-file-name="fileExtractor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../fileExtractor.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
               <folding>
-                <marker date="1448648436988" expanded="true" signature="12468:13790" placeholder="SELECT urls...urls..." />
+                <marker date="1448651484945" expanded="true" signature="13808:14986" placeholder="SELECT urls...urls..." />
+                <marker date="1448651484945" expanded="true" signature="16255:16553" placeholder="SELECT url, ..downloads..." />
               </folding>
             </state>
           </provider>
@@ -55,68 +120,43 @@
       <file leaf-file-name="getFiles.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-              <folding />
+            <state vertical-scroll-proportion="-3.892857">
+              <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="programAnalyze.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="programAnalyze.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48820755">
-              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+              <folding>
+                <element signature="e#1#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pwdump.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33239436">
+              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pwdump.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py">
+      <file leaf-file-name="lib.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="historyFirefox.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/historyFirefox.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="25" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="historyChrome.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/historyChrome.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="64" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chrome.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/chrome.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-                <marker date="1448648436984" expanded="true" signature="642:663" placeholder="SELECT missi..logins..." />
-              </folding>
+              <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,34 +164,55 @@
       <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/owade/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+            <state vertical-scroll-proportion="-3.892857">
+              <caret line="121" column="50" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="firefox.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/firefox.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/owade/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.607143">
+              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chromePass.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/owade/chromePass.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/owade/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-              <folding />
+              <caret line="139" column="41" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="program.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/owade/program.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.892857">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding>
+                <element signature="e#1242#1275#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -159,7 +220,7 @@
         <option value="CarlosLannister" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -192,17 +253,23 @@
         <option value="$PROJECT_DIR$/src/ui/owade/constants.py" />
         <option value="$PROJECT_DIR$/../windowsRegistery.py" />
         <option value="$PROJECT_DIR$/owade/fileAnalyze/windowsRegistery.py" />
-        <option value="$PROJECT_DIR$/owade/models.py" />
         <option value="$PROJECT_DIR$/owade/virusScan.py" />
         <option value="$PROJECT_DIR$/owade/chromePass.py" />
         <option value="$PROJECT_DIR$/owade/scriptBuscador.py" />
-        <option value="$PROJECT_DIR$/owade/fileExtraction/getFiles.py" />
-        <option value="$PROJECT_DIR$/owade/fileAnalyze/historyChrome.py" />
         <option value="$PROJECT_DIR$/owade/fileAnalyze/chrome.py" />
         <option value="$PROJECT_DIR$/owade/fileAnalyze/historyFirefox.py" />
-        <option value="$PROJECT_DIR$/owade/constants.py" />
-        <option value="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py" />
+        <option value="$PROJECT_DIR$/owade/fileAnalyze/historyChrome.py" />
+        <option value="$PROJECT_DIR$/owade/launcher.py" />
+        <option value="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/rockyou.txt" />
+        <option value="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/rawreg.py" />
+        <option value="$PROJECT_DIR$/owade/program.py" />
+        <option value="$PROJECT_DIR$/owade/urls.py" />
+        <option value="$PROJECT_DIR$/owade/views.py" />
         <option value="$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py" />
+        <option value="$PROJECT_DIR$/owade/models.py" />
+        <option value="$PROJECT_DIR$/owade/constants.py" />
+        <option value="$PROJECT_DIR$/owade/fileExtraction/getFiles.py" />
+        <option value="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py" />
       </list>
     </option>
   </component>
@@ -214,10 +281,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="951" />
+    <option name="x" value="-1" />
+    <option name="y" value="27" />
+    <option name="width" value="1368" />
+    <option name="height" value="742" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -261,7 +328,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -309,12 +375,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="fileExtraction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="owade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="owadeRebornDjango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="owade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="fileAnalyze" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -322,7 +407,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="true" />
   </component>
@@ -334,6 +419,12 @@
         <option name="myWorkingDirectory" value="$PROJECT_DIR$/src" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/owade/fileAnalyze" />
+      <recent name="$PROJECT_DIR$/owade" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.manage">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -361,14 +452,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/ui" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="owade" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ui/manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
       <option name="PARAMETERS" value="runserver 8080" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="manage (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="owade" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
@@ -560,14 +669,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
       <item index="1" class="java.lang.String" itemvalue="Python.manage" />
+      <item index="2" class="java.lang.String" itemvalue="Python.manage (1)" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.manage" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.manage (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -582,31 +693,44 @@
       <option name="number" value="Default" />
       <updated>1445851684394</updated>
     </task>
+    <task id="LOCAL-00001" summary="Project adapted to pycharm">
+      <created>1448661274151</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1448661274151</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Project adapted to pycharm">
+      <created>1448661284053</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1448661284053</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="951" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16118598" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39747635" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" sideWeight="0.50608826" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280757" sideWeight="0.50292826" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961948" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20790629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" sideWeight="0.4939117" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3987667" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32748538" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39966556" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
@@ -668,19 +792,86 @@
           <line>99</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
+          <line>183</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
+          <line>193</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
+          <line>197</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
+          <line>182</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
+          <line>31</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/owade/scriptBuscador.py">
+    <entry file="file://$PROJECT_DIR$/owade/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/firefox.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448648436988" expanded="true" signature="12468:13790" placeholder="SELECT urls...urls..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/chromePass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -688,7 +879,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -696,7 +889,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -706,6 +901,9 @@
           <caret line="66" column="25" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="25" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+            <marker date="1448649527326" expanded="true" signature="-1:-1" placeholder="SELECT url, ..moz_places..." />
+            <marker date="1448649527326" expanded="true" signature="-1:-1" placeholder="SELECT place..moz_annos..." />
+            <marker date="1448649527326" expanded="true" signature="-1:-1" placeholder="SELECT conte..moz_annos..." />
           </folding>
         </state>
       </provider>
@@ -716,6 +914,8 @@
           <caret line="60" column="64" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="64" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+            <marker date="1448662392327" expanded="true" signature="-1:-1" placeholder="SELECT urls...urls..." />
+            <marker date="1448662392327" expanded="true" signature="-1:-1" placeholder="SELECT url, ..downloads..." />
           </folding>
         </state>
       </provider>
@@ -725,8 +925,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <marker date="1448648436984" expanded="true" signature="642:663" placeholder="SELECT missi..logins..." />
+            <element signature="e#0#31#0" expanded="false" />
+            <marker date="1448649527306" expanded="true" signature="-1:-1" placeholder="SELECT missi..logins..." />
           </folding>
         </state>
       </provider>
@@ -743,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,25 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/virusScan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/scriptBuscador.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448648436988" expanded="true" signature="12468:13790" placeholder="SELECT urls...urls..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -777,15 +957,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -795,6 +979,9 @@
           <caret line="66" column="25" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="25" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+            <marker date="1448649527326" expanded="true" signature="-1:-1" placeholder="SELECT url, ..moz_places..." />
+            <marker date="1448649527326" expanded="true" signature="-1:-1" placeholder="SELECT place..moz_annos..." />
+            <marker date="1448649527326" expanded="true" signature="-1:-1" placeholder="SELECT conte..moz_annos..." />
           </folding>
         </state>
       </provider>
@@ -805,6 +992,8 @@
           <caret line="60" column="64" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="64" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+            <marker date="1448662392327" expanded="true" signature="-1:-1" placeholder="SELECT urls...urls..." />
+            <marker date="1448662392327" expanded="true" signature="-1:-1" placeholder="SELECT url, ..downloads..." />
           </folding>
         </state>
       </provider>
@@ -814,8 +1003,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <marker date="1448648436984" expanded="true" signature="642:663" placeholder="SELECT missi..logins..." />
+            <element signature="e#0#31#0" expanded="false" />
+            <marker date="1448649527306" expanded="true" signature="-1:-1" placeholder="SELECT missi..logins..." />
           </folding>
         </state>
       </provider>
@@ -832,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,88 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/virusScan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/scriptBuscador.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <marker date="1448648436988" expanded="true" signature="12468:13790" placeholder="SELECT urls...urls..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/historyFirefox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="25" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/historyChrome.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="64" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/chrome.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <marker date="1448648436984" expanded="true" signature="642:663" placeholder="SELECT missi..logins..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/firefox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,41 +1035,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/virusScan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/scriptBuscador.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448648436988" expanded="true" signature="12468:13790" placeholder="SELECT urls...urls..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/chromePass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owade/virusScan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,19 +1045,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/owade/virusScan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/owade/chromePass.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -997,14 +1059,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/owade/models.py">
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/firefox.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37850466">
-          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/firefox.py">
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/creddump/object.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.66902655">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/creddump/types.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/creddump/newobj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/creddump/addrspace.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/creddump/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/chrome.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#31#0" expanded="false" />
+            <marker date="1448649527306" expanded="true" signature="-1:-1" placeholder="SELECT missi..logins..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/launcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43564355">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1012,21 +1128,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/owade/constants.py">
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/rockyou.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/chrome.py">
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/newobj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8305085">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/object.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.7966104">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/rawreg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <marker date="1448648436984" expanded="true" signature="642:663" placeholder="SELECT missi..logins..." />
+            <element signature="e#799#824#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1034,9 +1165,11 @@
     <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/historyChrome.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="64" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="64" />
+          <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+            <marker date="1448662392327" expanded="true" signature="-1:-1" placeholder="SELECT urls...urls..." />
+            <marker date="1448662392327" expanded="true" signature="-1:-1" placeholder="SELECT url, ..downloads..." />
           </folding>
         </state>
       </provider>
@@ -1044,45 +1177,119 @@
     <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/historyFirefox.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="25" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="25" />
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+            <marker date="1448649527326" expanded="true" signature="-1:-1" placeholder="SELECT url, ..moz_places..." />
+            <marker date="1448649527326" expanded="true" signature="-1:-1" placeholder="SELECT place..moz_annos..." />
+            <marker date="1448649527326" expanded="true" signature="-1:-1" placeholder="SELECT conte..moz_annos..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/owade/scriptBuscador.py">
+    <entry file="file://$PROJECT_DIR$/owade/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="41" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="41" />
           <folding>
-            <marker date="1448648436988" expanded="true" signature="12468:13790" placeholder="SELECT urls...urls..." />
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/program.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.892857">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#1242#1275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.607143">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.892857">
+          <caret line="121" column="50" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../fileExtractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <marker date="1448651484945" expanded="true" signature="13808:14986" placeholder="SELECT urls...urls..." />
+            <marker date="1448651484945" expanded="true" signature="16255:16553" placeholder="SELECT url, ..downloads..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.892857">
+          <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+          <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py">
+    <entry file="file:///usr/lib/python2.7/threading.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-0.428169">
+          <caret line="809" column="0" selection-start-line="809" selection-start-column="0" selection-end-line="809" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48820755">
-          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+          <folding>
+            <element signature="e#1#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33239436">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
           <folding />
         </state>
       </provider>

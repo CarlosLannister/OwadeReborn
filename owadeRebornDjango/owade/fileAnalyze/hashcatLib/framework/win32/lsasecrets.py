@@ -19,11 +19,12 @@
 @contact:      bdolangavitt@wesleyan.edu
 """
 
-from framework.win32.rawreg import *
-from framework.addrspace import HiveFileAddressSpace
-from framework.win32.hashdump import get_bootkey,str_to_key
 from Crypto.Hash import MD5, SHA256
 from Crypto.Cipher import ARC4,DES, AES
+
+from owade.fileAnalyze.hashcatLib.framework import HiveFileAddressSpace
+from owade.fileAnalyze.hashcatLib.framework import get_bootkey,str_to_key
+
 
 def get_lsa_key(secaddr, bootkey, vista):
     root = get_root(secaddr)

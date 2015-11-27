@@ -19,11 +19,12 @@
 @contact:      bdolangavitt@wesleyan.edu
 """
 
-from framework.win32.rawreg import *
-from framework.addrspace import HiveFileAddressSpace
+from struct import unpack,pack
+
 from Crypto.Hash import MD5
 from Crypto.Cipher import ARC4,DES
-from struct import unpack,pack
+
+from owade.fileAnalyze.hashcatLib.framework import HiveFileAddressSpace
 
 odd_parity = [
   1, 1, 2, 2, 4, 4, 7, 7, 8, 8, 11, 11, 13, 13, 14, 14,
