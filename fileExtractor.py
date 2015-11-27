@@ -37,6 +37,13 @@ class Paths:
     chromeLogin = "/AppData/Local/Google/Chrome/User Data/Default/" + chromeLoginFile
     chromeHistory = "/AppData/Local/Google/Chrome/User Data/Default/" + chromeHistoryFile
 
+    # Firefox
+    firefoxKeysFile = "key3.db"
+    firefoxKeys = "/AppData/Roaming/Mozilla/Firefox/Profiles/771eriem.default/" + firefoxKeysFile
+
+    firefoxHistoryFile = "places.sqlite"
+    firefoxHistory = "/AppData/Roaming/Mozilla/Firefox/Profiles/771eriem.default/" + firefoxHistoryFile
+
 
 class Extrator(Paths):
     def __init__(self, harddrive, password=None):  # Each Object Extractor has its own harddrive
@@ -68,13 +75,15 @@ class Extrator(Paths):
                             print "--", userDir
                             done = self.getMasterKey(myPath, userDir,
                                                      filesystemObject)  # Try to get masterkey from users
-                            if done:
-                                self.getChromeLogin(myPath, userDir,
-                                                    filesystemObject)  # Try to get chrome passwords' database from each user (must have the masterkey for that user)
+                            if done:	#We must have the masterkey for that user
+                                self.getChromeLogin(myPath, userDir,filesystemObject)  # Try to get chrome passwords' database from each user 
+                                self.getChromeHistory(myPath, userDir, filesystemObject)  # Try to get chrome hystory database from each user
+                                self.getFirefoxKeys(myPath, userDir,filesystemObject)   # Try to get firefox passwords' database from each user 
+                                self.getFirefoxHistory(myPath, userDir,filesystemObject)  # Try to get firefox history database from each user 
+                                    # Resto de modulos de navegador
                                 print "Done"
 
-                            self.getChromeHistoryFile(myPath, userDir, filesystemObject)
-
+                            	
 
 
 
@@ -194,6 +203,23 @@ class Extrator(Paths):
         except:
             print "[++++]Can't find chrome passwords database[++++]"
 
+    def getFirefoxKeys(self, myPath, userDir, filesystemObject):  # Tries to get the firefox passwords' database looking for the chromeLogin file
+        print "----", "Getting firefox passwords database"
+        try:
+            firefoxUserKeys = self.usersPath + userDir + self.firefoxKeys
+            fileobject = filesystemObject.open(firefoxUserKeys)
+            myFirefoxPath = myPath + self.usersPath + userDir + "/firefox/"
+            try:
+                os.makedirs(myFirefoxPath)
+            except:
+                pass
+            outfile = open(myFirefoxPath + self.firefoxKeysFile, 'w')
+            filedata = fileobject.read_random(0, fileobject.info.meta.size)
+            outfile.write(filedata)
+        except Exception, e:
+            print e
+            print "[++++]Can't find firefox passwords' database[++++]"
+
     def getChromeHistoryFile(self, myPath, userDir, filesystemObject):
         print "----", "Getting chrome History"
         try:
@@ -209,6 +235,23 @@ class Extrator(Paths):
             outfile.write(filedata)
         except:
             print "[++++]Can't find chrome history[++++]"
+
+    def getFirefoxHistory(self, myPath, userDir,
+                       filesystemObject):   # Tries to get the firefox history database looking for the chromeLogin file
+        print "----", "Getting firefox history database"
+        try:
+            firefoxUserHistory = self.usersPath + userDir + self.firefoxHistory
+            fileobject = filesystemObject.open(firefoxUserHistory)
+            myFirefoxPath = myPath + self.usersPath + userDir + "/firefox/"
+            try:
+                os.makedirs(myFirefoxPath)
+            except:
+                pass
+            outfile = open(myFirefoxPath + self.firefoxHistoryFile, 'w')
+            filedata = fileobject.read_random(0, fileobject.info.meta.size)
+            outfile.write(filedata)
+        except:
+            print "[++++]Can't find firefox history database[++++]"
 
     def getChromePass(self, myPath, mkpDir, sid, password):
         print "--", "Getting chrome passwords"
