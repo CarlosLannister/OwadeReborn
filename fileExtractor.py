@@ -19,7 +19,7 @@ class Paths:
     usersPath = "/Users/"
 
     # Storage
-    myHD = "/media/hackaton/Lazarus/storage"
+    myHD = "/media/lannister/TOSHIBA EXT/storage"
     myImagePath = myHD + "/image/"
     myFilesPath = myHD + "/new_files/"
 
@@ -94,28 +94,31 @@ class Extrator(Paths):
 
                 partitionPath = self.myFilesPath + folder + self.usersPath
                 users = os.listdir(partitionPath)
-                for user in users:  # For each user in partition
-                    myPath = partitionPath + user
-                    userProtectDir = myPath + self.protectDir
-                    files = os.listdir(userProtectDir)
-                    for fi in files:
-                        if re.match("S-1-5-21-[0-9]+-[0-9]+-[0-9]+-[0-9]+",
-                                    fi):  # User's sid is the name of the only folder in protect
-                            sid = fi  # Here is the SID
-                    mkpDir = userProtectDir + sid  # Here is the masterkey directory
+                try:
+	                for user in users:  # For each user in partition
+	                    myPath = partitionPath + user
+	                    userProtectDir = myPath + self.protectDir
+	                    files = os.listdir(userProtectDir)
+	                    for fi in files:
+	                        if re.match("S-1-5-21-[0-9]+-[0-9]+-[0-9]+-[0-9]+",
+	                                    fi):  # User's sid is the name of the only folder in protect
+	                            sid = fi  # Here is the SID
+	                    mkpDir = userProtectDir + sid  # Here is the masterkey directory
 
-                    # Start getting the data
-                    # Here try to crack password if not given
-                    if self.password != None:
-                        self.getChromePass(myPath, mkpDir, sid, self.password)
-                    else:
-                        print "Unable to decrypt. Password required."
+	                    # Start getting the data
+	                    # Here try to crack password if not given
+	                    if self.password != None:
+	                        self.getChromePass(myPath, mkpDir, sid, self.password)
+	                    else:
+	                        print "Unable to decrypt. Password required."
 
-                    self.getFirefoxData(myPath)
-                    # Resto de modulos de extraer datos aqui
+	                    self.getFirefoxData(myPath)
+	                    # Resto de modulos de extraer datos aqui
 
-                    self.getChromeHistoryInfo(myPath)
-                    self.getChromeDowloadInfo(myPath)
+	                    self.getChromeHistoryInfo(myPath)
+	                    self.getChromeDowloadInfo(myPath)
+                except:
+                    pass
 
     def getFirefoxData(self, myPath):
         fire = firefox_decrypt()
@@ -302,8 +305,9 @@ class Extrator(Paths):
         """
             From https://github.com/OsandaMalith/ChromeFreak/blob/master/ChromeFreak.py CC license
         """
-        print "--", "Getting chrome history"
+
         history = ''
+        historyValues = {}
         try:
             sqlitePath = myPath + "/chrome/" + self.chromeHistoryFile
             connexion = sqlite3.connect(sqlitePath)
@@ -328,21 +332,14 @@ class Extrator(Paths):
 
             for row in c:
                 try:
-                    history += 'URL = %s\n' % str(row[0])
-                    history += 'URL Title = %s\n' % (row[1]).encode("utf-8")
-                    history += 'Number of Visits = %s\n' % str(row[2])
-                    history += 'Last Visit (UTC) = %s\n' % str(row[4])
-                    history += 'First Visit (UTC) = %s\n' % str(row[5])
-                    if (str(row[6]) == 'User typed the URL in the URL bar'):
-                        history += 'Description = %s\n\n' % (str(row[6]))
-                        history += 'Number of Times Typed = %s\n' % (str(row[3]))
-                    else:
-                        history += 'Description = %s\n\n' % (str(row[6]))
+                    historyValues['URL %s' % row[0]] = {'title':row[1].encode("utf-8"), 'visitNumber':str(row[2]),
+                    'lastVisit':str(row[4]), 'firstVisit':str(row[5])}
                 except Exception, e:
                     print e
                     continue
-            print history
-            return history
+            
+            print historyValues
+            return historyValues
 
         except sqlite3.OperationalError, e:
             e = str(e)
@@ -356,12 +353,11 @@ class Extrator(Paths):
                 print e
 
 
-    def getChromeDowloadInfo(self,myPath):
+    def getChromeDowloadInfo(self, myPath):
         """
             From https://github.com/OsandaMalith/ChromeFreak/blob/master/ChromeFreak.py CC license
         """
-        print "--", "Getting chrome downloads"
-        downloads = ''
+        downloadValues = {}
         try:
             sqlitePath = myPath + "/chrome/" + self.chromeHistoryFile
             connexion = sqlite3.connect(sqlitePath)
@@ -369,36 +365,31 @@ class Extrator(Paths):
             c.execute("SELECT url, current_path, target_path,datetime((end_time/1000000)-11644473600,'unixepoch', 'localtime'),\
 			 datetime((start_time/1000000)-11644473600,'unixepoch', 'localtime'),\
 			 received_bytes, total_bytes FROM downloads,\
-			 downloads_url_chains where downloads.id = downloads_url_chains.id")
+			 downloads_url_chains WHERE downloads.id = downloads_url_chains.id")
 
             for row in c:
+                receivedBytes = ''
                 try:
-                    downloads += 'URL = %s\n' % str(row[0])
-                    downloads += 'Current Path = %s\n' % str(row[1])
-                    downloads += 'Target Path = %s\n' % str(row[2])
-                    downloads += 'End Time = %s\n' % str(row[3])
-                    downloads += 'Start Time = %s\n' % str(row[4])
-                    if float(row[5]) < 1024:
-                        downloads += 'Received Bytes = %.2f Bytes\n' % (float(row[5]))
+                    #"%.2f" % receivedBytes
+                    receivedBytes = "%.2f Bytes" % float(row[5])
+                    #if receivedBytes < 1024:
+                    #downloads += 'Received Bytes = %.2f Bytes\n' % (float(row[5]))
                     if float(row[5]) > 1024 and float(row[5]) < 1048576:
-                        downloads += 'Received Bytes = %.2f KB\n' % (float(row[5]) / 1024)
+                        receivedBytes = "%.2f KB" % (float(row[5]) / 1024)
                     elif (float(row[5]) > 1048576 and float(row[5]) < 1073741824):
-                        downloads += 'Received Bytes = %.2f MB\n' % (float(row[5]) / 1048576)
+                        receivedBytes = "%.2f MB" % (float(row[5]) / 1048576)
                     else:
-                        downloads += 'Received Bytes = %.2f GB\n' % (float(row[5]) / 1073741824)
+                        receivedBytes = "%.2f GB" % (float(row[5]) / 1073741824)
 
-                    if (float(row[6]) < 1024):
-                        downloads += 'Total Bytes = %.2f Bytes\n\n' % (float(row[6]))
-                    if (float(row[6]) > 1024 and float(row[6]) < 1048576):
-                        downloads += 'Total Bytes = %.2f KB\n\n' % (float(row[6]) / 1024)
-                    elif (float(row[6]) > 1048576 and float(row[6]) < 1073741824):
-                        downloads += 'Total Bytes = %.2f MB\n\n' % (float(row[6]) / 1048576)
-                    else:
-                        downloads += 'Total Bytes = %.2f GB\n\n' % (float(row[6]) / 1073741824)
+                    downloadValues['URL %s' % row[0]] = {'currentPath':str(row[1]), 'targetPath':str(row[2]),
+                    'endTime':str(row[4]), 'startTime':str(row[5]), 'receivedBytes':str(receivedBytes)}
+
                 except UnicodeError:
                     continue
-            print downloads
-            return downloads
+
+            print downloadValues
+            return downloadValues
+
         except sqlite3.OperationalError, e:
             e = str(e)
             if e == 'database is locked':

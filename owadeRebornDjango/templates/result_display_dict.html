@@ -1,0 +1,11 @@
+{% load poll_extras %}
+
+{% assign values dic|value %}
+{% assign categories dic|category %}
+{% for key, value in values.items %}
+    <b>{{key}}:</b> {{value}}<br />
+{% endfor %}
+{% for categoryName, category in categories.items %}
+    <h3>{{categoryName}}</h3>
+        {% include "result_display_dict.html" with dic=category %}
+{% endfor %}

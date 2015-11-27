@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block pageContent %}
+<b>Serial Number:</b> {{hardDrive.serial}}<br />
+<b>Size:</b> {{hardDrive.size}}<br /><br /><br />
+<h2>Partitions</h2>
+{% if partitions %}
+    <ul>
+        {% for partition in partitions %}
+            <li><a href="result_partition_{{partition.id}}">{{ partition.type }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <div id="message-red">
+    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="red-left">
+            <font size="5">No paritions related.</font>
+        </td>
+        <td class="red-right">
+            <img src="{{ STATIC_PREFIX }}/images/table/icon_close_red.gif" alt="" />
+        </td>
+    </tr>
+    </table>
+    </div>
+{% endif %}
+{% endblock pageContent %}

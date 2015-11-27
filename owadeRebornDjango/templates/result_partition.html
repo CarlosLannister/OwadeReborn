@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block pageContent %}
+<h2>Datas</h2>
+<b>Slot:</b> {{partition.slot}}<br />
+<b>Offset:</b> {{partition.offset}}<br />
+<b>Size:</b> {{partition.size}}<br />
+<b>Type:</b> {{partition.type}}<br />
+<br />
+<a href="javascript:ddtreemenu.flatten('treemenu1', 'expand')">Expand All</a> | <a href="javascript:ddtreemenu.flatten('treemenu1', 'contact')">Contract All</a>
+{{ infos|safe }}
+<div id="quickmenu">
+<h2>Quick Access</h2>
+<ul class="quickmenu">
+<li><a class="quickmenu" href="result_passwords_{{partition.id}}">Passwords</a></li>
+<li><a class="quickmenu" href="result_history_{{partition.id}}">History</a></li>
+{% if linkedin %}
+<li><a class="quickmenu" href="result_linkedin_{{partition.id}}">Linkedin</a></li>
+{% endif %}
+</ul>
+</div>
+<script type="text/javascript">
+ddtreemenu.createTree("treemenu1", true)
+</script>
+{% endblock pageContent %}
