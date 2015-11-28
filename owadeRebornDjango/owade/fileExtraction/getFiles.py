@@ -108,14 +108,14 @@ class GetFiles(Process):
     def getChromeHistoryFile(self, myPath, userDir, filesystemObject):
         self.internLog_.addLog("Getting chrome History", 1)
         try:
-            chromeUserHistory = self.usersPath + userDir + self.chromeHistory
+            chromeUserHistory = "/Users/" + userDir + chromeHistory
             fileobject = filesystemObject.open(chromeUserHistory)
-            myChromePath = myPath + self.usersPath + userDir + "/chrome/"
+            myChromePath = myPath + "/Users/" + userDir + "/chrome/"
             try:
                 os.makedirs(myChromePath)
             except:
                 pass
-            outfile = open(myChromePath + self.chromeHistoryFile, 'w')
+            outfile = open(myChromePath + chromeHistoryFile, 'w')
             filedata = fileobject.read_random(0, fileobject.info.meta.size)
             outfile.write(filedata)
             outfile.close()
@@ -124,9 +124,9 @@ class GetFiles(Process):
 
     def getFirefoxProfiles(self, myPath, userDir, filesystemObject):
         try:
-            firefoxUserProfiles = self.usersPath + userDir + self.firefoxProfiles
+            firefoxUserProfiles = "/Users/" + userDir + firefoxProfiles
             directoryObject = filesystemObject.open_dir(firefoxUserProfiles)
-            myFirefoxPath = myPath + self.usersPath + userDir + "/firefox/"
+            myFirefoxPath = myPath + "/Users/" + userDir + "/firefox/"
             try:
                 os.makedirs(myFirefoxPath)
             except:
@@ -145,13 +145,13 @@ class GetFiles(Process):
                        filesystemObject):  # Tries to get the firefox passwords' database looking for the chromeLogin file
         self.internLog_.addLog("Getting firefox passwords database", 1)
         try:
-            firefoxUserKeys = userDir + self.firefoxKeysFile
+            firefoxUserKeys = userDir + firefoxKeysFile
             fileObject = filesystemObject.open(firefoxUserKeys)
             try:
                 os.makedirs(myPath)
             except:
                 pass
-            outfile = open(myPath + self.firefoxKeysFile, 'w')
+            outfile = open(myPath + firefoxKeysFile, 'w')
             filedata = fileObject.read_random(0, fileObject.info.meta.size)
             outfile.write(filedata)
             outfile.close()
@@ -163,13 +163,13 @@ class GetFiles(Process):
                           filesystemObject):  # Tries to get the firefox history database looking for the chromeLogin file
         self.internLog_.addLog("Getting firefox history database", 1)
         try:
-            firefoxUserHistory = userDir + self.firefoxHistoryFile
+            firefoxUserHistory = userDir + firefoxHistoryFile
             fileobject = filesystemObject.open(firefoxUserHistory)
             try:
                 os.makedirs(myPath)
             except:
                 pass
-            outfile = open(myPath + self.firefoxHistoryFile, 'w')
+            outfile = open(myPath + firefoxHistoryFile, 'w')
             filedata = fileobject.read_random(0, fileobject.info.meta.size)
             outfile.write(filedata)
             outfile.close()

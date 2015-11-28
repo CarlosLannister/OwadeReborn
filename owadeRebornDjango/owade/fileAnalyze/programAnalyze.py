@@ -66,6 +66,7 @@ class ProgramAnalyze(Process):
 
                         mod = GetChromeHistory()
                         dic = mod.main(myPath)
+                        print dic
                         if dic != None:
                             userInfos.update(dic)
 
@@ -78,8 +79,8 @@ class ProgramAnalyze(Process):
                     #    userInfos.update(dic)
 
                     infos[user] = userInfos
-
                     for user in infos:
+                        print user
                         print infos[user]
 
                     #self.updateDbGenericDic({self.__class__.__name__:infos}, partitionPath)
