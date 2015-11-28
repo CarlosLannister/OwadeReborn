@@ -35,7 +35,8 @@ def checkConstant(dir, isdir=True):
 #################
 ##Project main directory
 PROJECT_DIR = "/opt/"
-checkConstant(PROJECT_DIR + "owadeRebornDjango")
+PROJECT_NAME = "owadeRebornDjango/"
+checkConstant(PROJECT_DIR + PROJECT_NAME)
 
 ##DPAPI directory
 DPAPI_DIR = PROJECT_DIR + "dpapick/"
@@ -47,6 +48,7 @@ JOHN_DIR = PROJECT_DIR + "jtr/run"
 checkConstant(JOHN_DIR)
 sys.path.append(JOHN_DIR)
 
+HASHCAT_DIR = PROJECT_DIR + PROJECT_NAME + "owade/fileAnalyze/hashcatLib/hashcat"
 #################
 ### DATABASE CONFIGURATION
 #################

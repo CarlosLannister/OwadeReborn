@@ -27,6 +27,7 @@ class ProgramAnalyze(Process):
 
     def run(self):
         self.internLog_.addLog("Getting data from extracted files", 1)
+
         folders = os.listdir(FILE_DIR)
         for folder in folders:
             if self.hardDrive.serial in folder:  # check if harddrive is in the folder's name
@@ -39,14 +40,14 @@ class ProgramAnalyze(Process):
                 passwordDic = {}  # User;Password
                 mod = PwDump()
                 passwordDic = mod.main(system, sam)
-                partitionPath = FILE_DIR + folder + "/Users/"
+                partitionPath = FILE_DIR + "/" + folder + "/Users/"
                 users = os.listdir(partitionPath)
                 infos = {}
 
                 for user in users:  # For each user in partition
                     userInfos = {}
                     myPath = partitionPath + user
-                    userProtectDir = myPath + self.protectDir
+                    userProtectDir = myPath + protectDir
                     self.password = passwordDic[user]
                     files = os.listdir(userProtectDir)
                     for fi in files:
@@ -63,7 +64,7 @@ class ProgramAnalyze(Process):
                         if dic != None:
                             userInfos.update(dic)
 
-                        mod = GetChromeHistory(myPath)
+                        mod = GetChromeHistory()
                         dic = mod.main(myPath)
                         if dic != None:
                             userInfos.update(dic)
@@ -71,13 +72,17 @@ class ProgramAnalyze(Process):
                     else:
                         self.internLog_.addLog("Unable to decrypt Chrome Password DB.", 1)
 
-                    mod = GetFirefoxHistory()
-                    dic = mod.main(myPath)  # no saca dic
-                    if dic != None:
-                        userInfos.update(dic)
+                    #mod = GetFirefoxHistory()
+                    #dic = mod.main(myPath)  # no saca dic
+                    #if dic != None:
+                    #    userInfos.update(dic)
 
                     infos[user] = userInfos
-                    # self.updateDbGenericDic({self.__class__.__name__:infos}, partition)
+
+                    for user in infos:
+                        print infos[user]
+
+                    #self.updateDbGenericDic({self.__class__.__name__:infos}, partitionPath)
                     # Resto de modulos de extraer datos aqui
 
 

@@ -1,7 +1,8 @@
 import subprocess
 
 import lib
-
+from owade.constants import PROJECT_DIR, PROJECT_NAME, HASHCAT_DIR
+import os
 
 class PwDump(object):
 
@@ -24,12 +25,17 @@ class PwDump(object):
         for username, mihash in elementos:
             print username
             print mihash
-            hash_file = open("hash.txt", 'w')
+            print os.getcwd()
+            fileRoute = HASHCAT_DIR + "/hash.txt"
+
+            hash_file = open(fileRoute, 'w')
             hash_file.write(mihash + "\n")
             hash_file.close()
             subprocess.check_output(
-                "./hashcat/hashcat-cli64.bin -m 1000 --rules=perfect.rule hash.txt rockyou.txt --outfile-format=2 --outfile=resultado.txt",
+                HASHCAT_DIR + "/hashcat-cli64.bin -m 1000 --rules=" + HASHCAT_DIR + "/perfect.rule " + fileRoute + " " + HASHCAT_DIR +
+                "/rockyou.txt --outfile-format=2 --outfile=resultado.txt",
                 shell=True)
+
             # Lectura del fichero creado
             f = open('resultado.txt', 'r+')
             for line in f.readlines():

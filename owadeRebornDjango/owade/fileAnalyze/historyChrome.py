@@ -4,9 +4,6 @@ from owade.constants import *
 
 class GetChromeHistory:
 
-    def __init__(self):
-        pass
-
     def getChromeHistoryData(self, myPath):
         """
             From https://github.com/OsandaMalith/ChromeFreak/blob/master/ChromeFreak.py CC license
