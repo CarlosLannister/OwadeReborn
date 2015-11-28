@@ -54,7 +54,7 @@ class Paths:
 
 class Extractor(Paths):
     """
-        Extractor class use to extract Files and get passwords of that files
+        Extractor class is used to extract database Files and get data like passwords or history
     """
 
     def __init__(self, harddrive, password=None):  # Each Object Extractor has its own harddrive
@@ -88,7 +88,7 @@ class Extractor(Paths):
                             print "--", userDir
                             done = self.getMasterKey(myPath, userDir,
                                                      filesystemObject)  # Try to get masterkey from users
-                            if done:  # We must have the masterkey for that user
+                            if done != None:  # We must have the masterkey for that user
                                 self.getChromeLogin(myPath, userDir,
                                                     filesystemObject)  # Try to get chrome passwords' database from each user
                                 self.getChromeHistoryFile(myPath, userDir,
@@ -104,7 +104,7 @@ class Extractor(Paths):
     def extractData(self):
         """
             Main function for getting passwords and information from the files extracted
-             in extractFiles
+             in extractFiles.
         """
         print "\n\nGetting data from extracted files"
         folders = os.listdir(self.myFilesPath)
@@ -138,12 +138,13 @@ class Extractor(Paths):
 
                         self.getChromeHistoryInfo(myPath)
                         self.getChromeDowloadInfo(myPath)
-                except:
-                    pass
+                except Exception, e:
+                    print e
 
     def getFirefoxData(self, myPath):
         """
-            Call the methods for getting history and passwords information
+            Call the methods for getting history and downloads information.
+            Creates a firefox_decript object from firefoxHistory.
             :param myPath: Path where files are going to be located
         """
         fire = firefox_decrypt()
@@ -157,6 +158,10 @@ class Extractor(Paths):
     def get_All(self, directory, myPath, filesystemObject):
         """
             Get all files recursively from a given directory
+            :param
+            : directory : Path where it will search recursively
+            : myPath: Path where files are going to be located
+            : filesystemObject : Partition mounted from pytsk3
         """
         fullPath = myPath + directory
         try:
@@ -185,7 +190,8 @@ class Extractor(Paths):
         """
             Gets the SAM file
             :param myPath: Path where files are going to be located
-            :filesystemObject:
+            :filesystemObject: Partition mounted from pytsk3
+            :return The path of local storage
         """
         print "-", "Getting SAM"
         fileobject = filesystemObject.open(self.samPath)
@@ -198,10 +204,14 @@ class Extractor(Paths):
         filedata = fileobject.read_random(0, fileobject.info.meta.size)
         outfile.write(filedata)
         outfile.close()
+        return fullPath + "SAM"
 
     def getSYSTEM(self, myPath, filesystemObject):
         """
             Gets the SYSTEM file
+            :param myPath: Path where files are going to be located
+            :filesystemObject: Partition mounted from pytsk3
+            :return The path of local storage
         """
         print "-", "Getting SYSTEM"
         fileobject = filesystemObject.open(self.systemPath)
@@ -214,17 +224,21 @@ class Extractor(Paths):
         filedata = fileobject.read_random(0, fileobject.info.meta.size)
         outfile.write(filedata)
         outfile.close()
+        return fullPath + "SYSTEM"
 
-    def getMasterKey(self, myPath, userDir,
-                     filesystemObject):
+    def getMasterKey(self, myPath, userDir, filesystemObject):
         """
             Tries to get the masterkey looking for the protect directory in each user folder
+            :param myPath: Path where files are going to be located
+            :userDir: Username of the masterkey
+            :filesystemObject: Partition mounted from pytsk3
+            :return  The path of local storage if done, None if user doesn't have masterkey
         """
         print "----", "Getting masterkey"
         protectPath = self.usersPath + userDir + self.protectDir
         try:
             self.get_All(protectPath, myPath, filesystemObject)  # Search recursive for the files
-            return True  # It has found the file/s
+            return protectPath  # It has found the file/s
         except:
             print "[++++]User is not valid, it doesn't have masterkey[++++]"
             try:
@@ -232,12 +246,16 @@ class Extractor(Paths):
                     myPath + protectPath)  # If user is not valid, we delete the directory in users folder (users like 'all users', 'default' should fail)
             except:
                 pass
-            return False
+            return None
 
     def getChromeLogin(self, myPath, userDir,
                        filesystemObject):
         """
              Tries to get the chrome passwords' database looking for the chromeLogin file
+             :param myPath: Path where files are going to be located
+            :userDir: Username of the chrome database
+            :filesystemObject: Partition mounted from pytsk3
+            :return  The path of local storage if done, None if user doesn't have any chrome passwords database
         """
         print "----", "Getting chrome passwords' database"
         try:
@@ -252,11 +270,18 @@ class Extractor(Paths):
             filedata = fileobject.read_random(0, fileobject.info.meta.size)
             outfile.write(filedata)
             outfile.close()
+            return myChromePath + self.chromeLoginFile
         except:
             print "[++++]Can't find chrome passwords database[++++]"
+            return None
 
     def getChromeHistoryFile(self, myPath, userDir, filesystemObject):
         """
+            Tries to get the chrome history database looking for the history file
+             :param myPath: Path where files are going to be located
+            :userDir: Username of the chrome database
+            :filesystemObject: Partition mounted from pytsk3
+            :return  The path of local storage if done, None if user doesn't have any chrome history database
         """
         print "----", "Getting chrome History"
         try:
@@ -271,11 +296,17 @@ class Extractor(Paths):
             filedata = fileobject.read_random(0, fileobject.info.meta.size)
             outfile.write(filedata)
             outfile.close()
+            return myChromePath + self.chromeHistoryFile
         except:
             print "[++++]Can't find chrome history[++++]"
+            return None
 
     def getFirefoxProfiles(self, myPath, userDir, filesystemObject):
         """
+            Tries to get all the firefox profiles, trying to extract passwords file and history file from each one
+            :param myPath: Path where files are going to be located
+            :userDir: Username of the firefox profiles
+            :filesystemObject: Partition mounted from pytsk3
         """
         try:
             firefoxUserProfiles = self.usersPath + userDir + self.firefoxProfiles
@@ -298,7 +329,11 @@ class Extractor(Paths):
     def getFirefoxKeys(self, myPath, userDir,
                        filesystemObject):
         """
-            Tries to get the firefox passwords' database looking for the chromeLogin file
+            Tries to get the firefox passwords' database looking for the keys3.db file
+            :param myPath: Path where files are going to be located
+            :userDir: Name of the firefox profile
+            :filesystemObject: Partition mounted from pytsk3
+            :return The path of local storage if done, None if user doesn't have any chrome history database
         """
         print "----", "Getting firefox passwords database"
         try:
@@ -312,14 +347,19 @@ class Extractor(Paths):
             filedata = fileObject.read_random(0, fileObject.info.meta.size)
             outfile.write(filedata)
             outfile.close()
-
+            return myPath + self.firefoxKeysFile
         except:
             print "[++++]Can't find firefox passwords' database[++++]"
+            return None
 
     def getFirefoxHistory(self, myPath, userDir,
                           filesystemObject):
         """
-            Tries to get the firefox history database looking for the chromeLogin file
+            Tries to get the firefox history database looking for the places.sqlite file
+            :param myPath: Path where files are going to be located
+            :userDir: Name of the firefox profile
+            :filesystemObject: Partition mounted from pytsk3
+            :return The path of local storage if done, None if user doesn't have any chrome history database
         """
         print "----", "Getting firefox history database"
         try:
@@ -333,11 +373,20 @@ class Extractor(Paths):
             filedata = fileobject.read_random(0, fileobject.info.meta.size)
             outfile.write(filedata)
             outfile.close()
+            return myPath + self.firefoxHistoryFile
         except:
             print "[++++]Can't find firefox history database[++++]"
+            return None
 
     def getChromePass(self, myPath, mkpDir, sid, password):
         """
+            Creates a GetChromePassword object from chromePass.py, who can decrypt, with DPAPICK functions, chrome's
+             database. It also initialises some variables for the decrypt function
+            :param myPath: Path where files are going to be located
+            :mkpDir: Masterkey directory
+            :sid: SID of the user
+            :password: Password of the user
+            :return Dictionary with the result, None if error
         """
         print "--", "Getting chrome passwords"
         try:
@@ -352,16 +401,20 @@ class Extractor(Paths):
             chromePassExtractor = GetChromePasswords()
             pwords = chromePassExtractor.main(database, mkp, sid, passHash)
             print pwords
+            return pwords
+
         except Exception, e:
-            print e
-            pass
+            return None
 
     def getChromeHistoryInfo(self, myPath):
         """
             From https://github.com/OsandaMalith/ChromeFreak/blob/master/ChromeFreak.py CC license
+
+            Gets chrome's history
+            :param myPath: Path where files are going to be located
+            :return List with the result, None if error
         """
 
-        history = ''
         historyValues = {}
         try:
             sqlitePath = myPath + "/chrome/" + self.chromeHistoryFile
@@ -406,10 +459,15 @@ class Extractor(Paths):
                 print '[!] Something wrong with the database path'
             else:
                 print e
+            return None
 
     def getChromeDowloadInfo(self, myPath):
         """
             From https://github.com/OsandaMalith/ChromeFreak/blob/master/ChromeFreak.py CC license
+
+            Gets chrome's downloads
+            :param myPath: Path where files are going to be located
+            :return List with the result, None if error
         """
         downloadValues = {}
         try:
@@ -455,6 +513,7 @@ class Extractor(Paths):
                 print '[!] Something wrong with the database path'
             else:
                 print e
+            return None
 
 
 #Use Example
