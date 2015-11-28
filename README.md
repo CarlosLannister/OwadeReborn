@@ -8,7 +8,12 @@
 #What is OwadeReborn?
 OwadeReborn is a forensic tool for extract offline data from a Windows 7 and 8.1 NTFS disc image. 
 
-This project is a continuation from a 2011 one called owade, which was presented at the Blackhat USA 2011. This first project was made for Windows XP and is now deprecated.
+This project is a fork from Owade project,https://bitbucket.org/Elie/owade/wiki/Home. This project was presented at the Blackhat USA 2011. This first project was made for Windows XP and is now deprecated.
+
+#Install OwadeReborn 
+
+Owade provide a http website for control check the Wiki for tutorials and how install the project. 
+https://github.com/CarlosLannister/OwadeReborn/wiki
 
 #Functions
 The aplication gets:
