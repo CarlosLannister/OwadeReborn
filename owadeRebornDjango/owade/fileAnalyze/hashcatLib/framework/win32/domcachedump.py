@@ -24,9 +24,10 @@ from struct import unpack
 from Crypto.Hash import HMAC
 from Crypto.Cipher import ARC4, AES
 
-from owade.fileAnalyze.hashcatLib.framework import HiveFileAddressSpace
-from owade.fileAnalyze.hashcatLib.framework import get_bootkey
-from owade.fileAnalyze.hashcatLib.framework import get_secret_by_name,get_lsa_key
+from owade.fileAnalyze.hashcatLib.framework.win32.rawreg import *
+from owade.fileAnalyze.hashcatLib.framework.addrspace import HiveFileAddressSpace
+from owade.fileAnalyze.hashcatLib.framework.win32.hashdump import get_bootkey
+from owade.fileAnalyze.hashcatLib.framework.win32.lsasecrets import get_secret_by_name,get_lsa_key
 
 
 def get_nlkm(secaddr, lsakey, vista):

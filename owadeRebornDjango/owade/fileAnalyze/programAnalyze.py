@@ -30,8 +30,10 @@ class ProgramAnalyze(Process):
         folders = os.listdir(FILE_DIR)
         for folder in folders:
             if self.hardDrive.serial in folder:  # check if harddrive is in the folder's name
-                sam = FILE_DIR + folder + "/SAM/SAM"  # Here is the SAM
-                system = FILE_DIR + folder + "/SYSTEM/SYSTEM"  # Here is the SYSTEM
+                sam = FILE_DIR + "/" + folder + "/SAM/SAM"  # Here is the SAM
+                system = FILE_DIR + "/" + folder + "/SYSTEM/SYSTEM"  # Here is the SYSTEM
+                print sam
+                print system
 
                 # Password Cracking
                 passwordDic = {}  # User;Password

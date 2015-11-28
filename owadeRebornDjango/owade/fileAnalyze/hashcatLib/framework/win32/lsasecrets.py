@@ -22,8 +22,9 @@
 from Crypto.Hash import MD5, SHA256
 from Crypto.Cipher import ARC4,DES, AES
 
-from owade.fileAnalyze.hashcatLib.framework import HiveFileAddressSpace
-from owade.fileAnalyze.hashcatLib.framework import get_bootkey,str_to_key
+from owade.fileAnalyze.hashcatLib.framework.win32.rawreg import *
+from owade.fileAnalyze.hashcatLib.framework.addrspace import HiveFileAddressSpace
+from owade.fileAnalyze.hashcatLib.framework.win32.hashdump import get_bootkey,str_to_key
 
 
 def get_lsa_key(secaddr, bootkey, vista):

@@ -19,10 +19,11 @@
 @contact:      bdolangavitt@wesleyan.edu
 """
 
+
+from owade.fileAnalyze.hashcatLib.framework.object import *
+from owade.fileAnalyze.hashcatLib.framework.types import regtypes as types
 from operator import itemgetter
 from struct import unpack
-
-from owade.fileAnalyze.hashcatLib.framework import regtypes as types
 
 
 def get_ptr_type(structure, member):
