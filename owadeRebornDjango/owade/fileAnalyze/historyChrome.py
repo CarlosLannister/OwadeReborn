@@ -102,5 +102,7 @@ class GetChromeHistory:
 
     def main(self, myPath):
         placesValues = self.getChromeHistoryData(myPath)
+        if placesValues == None:
+            return None
         downloadValues = self.getChromeDowloadData(myPath)
         return {self.__class__.__name__:{'history':placesValues, 'download':downloadValues}}

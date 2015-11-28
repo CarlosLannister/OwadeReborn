@@ -7,9 +7,9 @@ class GetFirefoxHistory:
 
     def getHistory(self, db):
         print "--", "Getting firefox history"
+        dic = {}
         conn = sqlite3.connect(db)
         cursor = conn.cursor()
-        listrows = []
         listhistory = []
         cursor.execute("SELECT url, visit_count, last_visit_date "
                             "FROM moz_places")
@@ -22,12 +22,14 @@ class GetFirefoxHistory:
                 last_visit_date = datetime.datetime.fromtimestamp(row[2] / 1000000.0)
             else:
                 last_visit_date = row[2]
-            listrows.append(row[0])  # url
+            dic['url'] = row[0]
+            dic['visit_count'] = row[1]
+            dic['last_visit_date'] = str(last_visit_date)
+            '''listrows.append(row[0])  # url
             listrows.append(row[1])  # visit_count
-            listrows.append(str(last_visit_date))  # last_visit_date
+            listrows.append(str(last_visit_date))  # last_visit_date'''
 
-            listhistory.append(listrows)
-            listrows = []
+            listhistory.append(dic)
         return listhistory
 
     def getDownloads(self, db):
@@ -37,6 +39,7 @@ class GetFirefoxHistory:
         listnumbersid = []  # All the ids from the different programms.
         rowdownloads = []
         listdownloads = []
+        dic = {}
         cursor.execute("SELECT place_id FROM moz_annos")
         all_rows = cursor.fetchall()
 
@@ -54,12 +57,13 @@ class GetFirefoxHistory:
             pathfile = re.sub("file:///", '', all_rows[0][0])
             # Name of the file
             namefile = all_rows[1][0]
-            rowdownloads.append(size)
-            rowdownloads.append(str(date))
-            rowdownloads.append(pathfile)
-            rowdownloads.append(namefile)
-            listdownloads.append(rowdownloads)
-            rowdownloads = []
+            dic['size'] = size
+            dic['date'] = str(date)
+            dic['pathfile'] = pathfile
+            dic['namefile'] = namefile
+
+            listdownloads.append(dic)
+
         return listdownloads
 
     # TIME
@@ -67,7 +71,13 @@ class GetFirefoxHistory:
     def main(self, myPath):
         myFirefoxPath = myPath + "/firefox/"
         profiles = os.listdir(myFirefoxPath)
+        history = {}
+        downloads = {}
         for profile in profiles:
             myFirefoxHistoryPath = myFirefoxPath + profile + "/" + firefoxHistoryFile
-            print self.getHistory(myFirefoxHistoryPath)
-            print self.getDownloads(myFirefoxHistoryPath)
+            history[profile] = self.getHistory(myFirefoxHistoryPath)
+            downloads[profile] = self.getDownloads(myFirefoxHistoryPath)
+
+            dic = {"getFirefoxHistory" : history, "getFirefoxDownloads" : downloads}
+
+        return dic

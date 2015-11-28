@@ -15,6 +15,7 @@ from owade.fileExtraction.newHardDrive import NewHardDrive
 from owade.result.passwords import Passwords
 from owade.result.history import History
 from owade.models import *
+from owade.constants import HASHCAT_DIR
 
 
 # Create your views here.
@@ -124,6 +125,11 @@ def launchAnalyze(request):
         hardDrives = forms.ModelChoiceField(queryset=HardDrive.objects.all(), empty_label=None)
         tasks = forms.ChoiceField(choices=g_program.tasks_form_)
         overWrite = forms.BooleanField(initial=False, required=False)
+        dictionary = forms.CharField(initial=HASHCAT_DIR + "/rockyou.txt",required=False)
+        chromePasswords = forms.BooleanField(initial=True,required=False)
+        chromeHistory = forms.BooleanField(initial=True,required=False)
+        firefoxPassword = forms.BooleanField(initial=True,required=False)
+        firefoxHistory = forms.BooleanField(initial=True,required=False)
 
     launch = False
     if request.method == 'POST':
@@ -133,14 +139,26 @@ def launchAnalyze(request):
             hardDrive = form.cleaned_data['hardDrives']
             task = form.cleaned_data['tasks']
             overWrite = form.cleaned_data['overWrite']
+            dictionary = form.cleaned_data['dictionary']
+            chromePasswords = form.cleaned_data['chromePasswords']
+            chromeHistory = form.cleaned_data['chromeHistory']
+            firefoxPassword = form.cleaned_data['firefoxPassword']
+            firefoxHistory = form.cleaned_data['firefoxHistory']
+
     else:
         form = AnalyzeForm()
 
     if launch:
-        if g_program.task(task, hardDrive, overWrite):
-            return HttpResponseRedirect('launch')
+        if task == "0":
+            if g_program.task(task, hardDrive, overWrite, chromePasswords, chromeHistory,firefoxPassword,firefoxHistory):
+                return HttpResponseRedirect('launch')
+            else:
+                status = "Launch failure, a process is probably running"
         else:
-            status = "Launch failure, a process is probably running"
+            if g_program.task(task, hardDrive, overWrite, dictionary, chromePasswords, chromeHistory,firefoxPassword,firefoxHistory):
+                return HttpResponseRedirect('launch')
+            else:
+                status = "Launch failure, a process is probably running"
     else:
         if g_program.available():
             status = "Choose an hard drive to analyze"

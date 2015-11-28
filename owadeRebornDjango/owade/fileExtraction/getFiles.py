@@ -15,10 +15,15 @@ from owade.constants import *
 
 
 class GetFiles(Process):
-    def __init__(self, internLog, terminalLog, hardDrive, overWrite):
+    def __init__(self, internLog, terminalLog, hardDrive, overWrite, chromePassword,
+                 chromeHistory, firefoxPassword, firefoxHistory):
         Process.__init__(self, internLog, terminalLog)
         self.hardDrive = hardDrive
         self.overWrite = overWrite
+        self.chromePassword = chromePassword
+        self.chromeHistory = chromeHistory
+        self.firefoxPassword = firefoxPassword
+        self.firefoxHistory = firefoxHistory
 
     def getSAM(self, myPath, filesystemObject):  # Gets the SAM file
         self.internLog_.addLog("Getting SAM", 1)
@@ -51,7 +56,7 @@ class GetFiles(Process):
         self.internLog_.addLog("Getting masterkey", 1)
         protectPath = "/Users/" + userDir + protectDir
         try:
-            self.get_All(protectPath, myPath, filesystemObject)  # Search recursive for the files
+            self.get_All(protectPath, myPath + protectPath, filesystemObject)  # Search recursive for the files
             self.internLog_.addLog("[++++]User: " + userDir + ", is  valid, masterkey obteined[++++]y", 1)
             return True  # It has found the file/s
         except:
@@ -63,23 +68,24 @@ class GetFiles(Process):
                 pass
             return False
 
-    def get_All(self, directory, myPath, filesystemObject):  # Get all files recursively from a given directory
-        fullPath = myPath + directory
+    def get_All(self, path, myPath, filesystemObject):  # Get all files recursively from a given directory
         try:
-            os.makedirs(fullPath)  # Tries to create the subfolder for future saving
+            os.makedirs(myPath)  # Tries to create the subfolder for future saving
         except:
             pass
-        directoryObject = filesystemObject.open_dir(directory)
+        directoryObject = filesystemObject.open_dir(path)
         for entryObject in directoryObject:
             try:
                 entryName = entryObject.info.name.name
                 if entryName != '.' and entryName != '..':
-                    ObjectName = directory + entryName
-                    if entryObject.info.meta.type == pytsk3.TSK_FS_META_TYPE_DIR:
-                        self.get_All(ObjectName + "/", myPath, filesystemObject)
-                    else:
+                    ObjectName = path + entryName
+                    if entryObject.info.meta.type == pytsk3.TSK_FS_META_TYPE_DIR:   #If directory
+                        directory = ObjectName + "/"
+                        myNewPath = myPath + entryName + "/"
+                        self.get_All(directory, myNewPath, filesystemObject)
+                    else:                                                           #If file
                         fileobject = filesystemObject.open(ObjectName)
-                        outfile = open(fullPath + entryName, 'w')
+                        outfile = open(myPath + "/" + entryName, 'w')
                         filedata = fileobject.read_random(0, fileobject.info.meta.size)
                         outfile.write(filedata)
                         outfile.close()
@@ -132,49 +138,19 @@ class GetFiles(Process):
             except:
                 pass
             for folder in directoryObject:
-                folderName = folder.info.name.name
-                if folderName != '.' and folderName != '..':
-                    firefoxProfileFolder = firefoxUserProfiles + folderName + "/"
-                    myFirefoxProfilePath = myFirefoxPath + folderName + "/"
-                    self.getFirefoxKeys(myFirefoxProfilePath, firefoxProfileFolder, filesystemObject)
-                    self.getFirefoxHistory(myFirefoxProfilePath, firefoxProfileFolder, filesystemObject)
+                try:
+                    folderName = folder.info.name.name
+                    if folderName != '.' and folderName != '..':
+
+                        firefoxProfileFolder = firefoxUserProfiles + folderName + "/"
+                        myFirefoxProfilePath = myFirefoxPath + folderName + "/"
+                        self.get_All(firefoxProfileFolder, myFirefoxProfilePath, filesystemObject)
+                        #self.getFirefoxKeys(myFirefoxProfilePath, firefoxProfileFolder, filesystemObject)
+                        #self.getFirefoxHistory(myFirefoxProfilePath, firefoxProfileFolder, filesystemObject)
+                except:
+                    print "holi"
         except:
             self.internLog_.addLog("[++++]Can't find firefox profiles[++++]", 1)
-
-    def getFirefoxKeys(self, myPath, userDir,
-                       filesystemObject):  # Tries to get the firefox passwords' database looking for the chromeLogin file
-        self.internLog_.addLog("Getting firefox passwords database", 1)
-        try:
-            firefoxUserKeys = userDir + firefoxKeysFile
-            fileObject = filesystemObject.open(firefoxUserKeys)
-            try:
-                os.makedirs(myPath)
-            except:
-                pass
-            outfile = open(myPath + firefoxKeysFile, 'w')
-            filedata = fileObject.read_random(0, fileObject.info.meta.size)
-            outfile.write(filedata)
-            outfile.close()
-
-        except:
-            self.internLog_.addLog("[++++]Can't find firefox passwords' database[++++]", 1)
-
-    def getFirefoxHistory(self, myPath, userDir,
-                          filesystemObject):  # Tries to get the firefox history database looking for the chromeLogin file
-        self.internLog_.addLog("Getting firefox history database", 1)
-        try:
-            firefoxUserHistory = userDir + firefoxHistoryFile
-            fileobject = filesystemObject.open(firefoxUserHistory)
-            try:
-                os.makedirs(myPath)
-            except:
-                pass
-            outfile = open(myPath + firefoxHistoryFile, 'w')
-            filedata = fileobject.read_random(0, fileobject.info.meta.size)
-            outfile.write(filedata)
-            outfile.close()
-        except:
-            self.internLog_.addLog("[++++]Can't find firefox history database[++++]", 1)
 
     def run(self):  # Main function for extract the important files from the harddrive (only extract files from NTFS partitions)
         self.internLog_.addLog("ProgramAnalyze process launched", 1)
@@ -203,11 +179,17 @@ class GetFiles(Process):
                             done = self.getMasterKey(myPath, userDir,
                                                      filesystemObject)  # Try to get masterkey from users
                             if done:  # We must have the masterkey for that user
-                                self.getChromeLogin(myPath, userDir,
-                                                    filesystemObject)  # Try to get chrome passwords' database from each user
-                                self.getChromeHistoryFile(myPath, userDir,
+
+                                if self.chromePassword:
+                                    self.getChromeLogin(myPath, userDir,
+                                                        filesystemObject)  # Try to get chrome passwords' database from each user
+
+                                if self.chromeHistory:
+                                    self.getChromeHistoryFile(myPath, userDir,
                                                           filesystemObject)  # Try to get chrome hystory database from each user
-                                self.getFirefoxProfiles(myPath, userDir,
+
+                                if self.firefoxHistory or self.firefoxPassword:
+                                    self.getFirefoxProfiles(myPath, userDir,
                                                         filesystemObject)  # Try to get firefox profiles from each user (where passwords and history is stored)
 
                                 # Resto de modulos de navegador

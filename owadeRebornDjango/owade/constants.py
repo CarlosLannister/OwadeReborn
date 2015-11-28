@@ -64,7 +64,9 @@ DATABASE_PORT='5432'
 #################
 ##Where to stock disk image after ddrescue
               #/media/USERNAME/HDNAME/
-EXT_HDRIVE = subprocess.check_output("find /media -name storage", shell=True).rstrip()
+#EXT_HDRIVE = subprocess.check_output("find /media -name storage", shell=True).rstrip()
+EXT_HDRIVE = "/media/hackaton/Lazarus/storage"
+#Aqui metodo post
 
 IMAGE_DIR = EXT_HDRIVE + "/image"
 IMAGE_FTP = EXT_HDRIVE + "/ftp"
@@ -72,28 +74,6 @@ checkConstant(IMAGE_DIR)
 ##Where to stock files
 FILE_DIR = EXT_HDRIVE + "/file"
 checkConstant(FILE_DIR)
-
-
-#################
-### LIB DIR (shouldn't be modified)
-#################
-LIB_DIR = PROJECT_DIR + "owadeRebornDjango/lib/"
-##ff_key3db_dump directory
-KEY3DB_DIR = LIB_DIR + "ff_key3db_dump/"
-checkConstant(KEY3DB_DIR)
-
-##msiecf directory
-MSIECF_DIR = LIB_DIR + "msiecf/"
-checkConstant(MSIECF_DIR)
-
-##CFProperty directory
-CFPROPERTY_DIR = LIB_DIR + 'CFProperty/'
-checkConstant(CFPROPERTY_DIR)
-sys.path.append(CFPROPERTY_DIR)
-
-##geoQuery.rb
-GEOQUERY = LIB_DIR + 'geoQuery.rb'
-checkConstant(GEOQUERY, False)
 
 
 #################
@@ -124,7 +104,6 @@ chromeHistoryFile = "History"
 chromeHistory = "/AppData/Local/Google/Chrome/User Data/Default/" + chromeHistoryFile
 
 # Firefox
-firefoxKeysFile = "key3.db"
 firefoxHistoryFile = "places.sqlite"
 firefoxProfiles = "/AppData/Roaming/Mozilla/Firefox/Profiles/"
 
