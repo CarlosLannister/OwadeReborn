@@ -15,6 +15,14 @@ import json
 
 
 class Paths:
+    """
+        Hardcoded routes for extracting Files
+        WINDOWS 7 and WINDOWS 8
+    """
+
+    def __init__(self):
+        pass
+
     ntfs = "NTFS (0x07)"
     usersPath = "/Users/"
 
@@ -44,13 +52,19 @@ class Paths:
     firefoxProfiles = "/AppData/Roaming/Mozilla/Firefox/Profiles/"
 
 
-class Extrator(Paths):
+class Extractor(Paths):
+    """
+        Extractor class use to extract Files and get passwords of that files
+    """
+
     def __init__(self, harddrive, password=None):  # Each Object Extractor has its own harddrive
         self.harddrive = harddrive
         self.password = password
 
-    def extractFiles(
-            self):  # Main function for extract the important files from the harddrive (only extract files from NTFS partitions)
+    def extractFiles(self):  #
+        """
+            Main function for extracting selected files from the harddrive (NTFS partitions)
+        """
         imagefile = self.myImagePath + self.harddrive
 
         imagehandle = pytsk3.Img_Info(imagefile)
@@ -70,21 +84,28 @@ class Extrator(Paths):
                     directoryObject = filesystemObject.open_dir(self.usersPath)  # Open users directory
                     for entryObject in directoryObject:
                         userDir = entryObject.info.name.name
-                        if userDir != '.' and userDir != '..':  # Quit . and .. directories
+                        if userDir != '.' and userDir != '..':  # Skip . and .. directories
                             print "--", userDir
                             done = self.getMasterKey(myPath, userDir,
                                                      filesystemObject)  # Try to get masterkey from users
-                            if done:	#We must have the masterkey for that user
-                                self.getChromeLogin(myPath, userDir,filesystemObject)  # Try to get chrome passwords' database from each user 
-                                self.getChromeHistoryFile(myPath, userDir, filesystemObject)  # Try to get chrome hystory database from each user
-                                self.getFirefoxProfiles(myPath, userDir,filesystemObject)   # Try to get firefox profiles from each user (where passwords and history is stored)
+                            if done:  # We must have the masterkey for that user
+                                self.getChromeLogin(myPath, userDir,
+                                                    filesystemObject)  # Try to get chrome passwords' database from each user
+                                self.getChromeHistoryFile(myPath, userDir,
+                                                          filesystemObject)  # Try to get chrome hystory database from each user
+                                self.getFirefoxProfiles(myPath, userDir,
+                                                        filesystemObject)  # Try to get firefox profiles from each user (where passwords and history is stored)
 
-                                    # Resto de modulos de navegador
+                                # Resto de modulos de navegador
                                 print "Done"
                 except:
                     print "[++++]Partition has no user information[++++]"
 
     def extractData(self):
+        """
+            Main function for getting passwords and information from the files extracted
+             in extractFiles
+        """
         print "\n\nGetting data from extracted files"
         folders = os.listdir(self.myFilesPath)
         for folder in folders:
@@ -95,32 +116,36 @@ class Extrator(Paths):
                 partitionPath = self.myFilesPath + folder + self.usersPath
                 users = os.listdir(partitionPath)
                 try:
-	                for user in users:  # For each user in partition
-	                    myPath = partitionPath + user
-	                    userProtectDir = myPath + self.protectDir
-	                    files = os.listdir(userProtectDir)
-	                    for fi in files:
-	                        if re.match("S-1-5-21-[0-9]+-[0-9]+-[0-9]+-[0-9]+",
-	                                    fi):  # User's sid is the name of the only folder in protect
-	                            sid = fi  # Here is the SID
-	                    mkpDir = userProtectDir + sid  # Here is the masterkey directory
+                    for user in users:  # For each user in partition
+                        myPath = partitionPath + user
+                        userProtectDir = myPath + self.protectDir
+                        files = os.listdir(userProtectDir)
+                        for fi in files:
+                            if re.match("S-1-5-21-[0-9]+-[0-9]+-[0-9]+-[0-9]+",
+                                        fi):  # User's sid is the name of the only folder in protect
+                                sid = fi  # Here is the SID
+                        mkpDir = userProtectDir + sid  # Here is the masterkey directory
 
-	                    # Start getting the data
-	                    # Here try to crack password if not given
-	                    if self.password != None:
-	                        self.getChromePass(myPath, mkpDir, sid, self.password)
-	                    else:
-	                        print "Unable to decrypt. Password required."
+                        # Start getting the data
+                        # Here try to crack password if not given
+                        if self.password != None:
+                            self.getChromePass(myPath, mkpDir, sid, self.password)
+                        else:
+                            print "Unable to decrypt. Password required."
 
-	                    self.getFirefoxData(myPath)
-	                    # Resto de modulos de extraer datos aqui
+                        self.getFirefoxData(myPath)
+                        # Resto de modulos de extraer datos aqui
 
-	                    self.getChromeHistoryInfo(myPath)
-	                    self.getChromeDowloadInfo(myPath)
+                        self.getChromeHistoryInfo(myPath)
+                        self.getChromeDowloadInfo(myPath)
                 except:
                     pass
 
     def getFirefoxData(self, myPath):
+        """
+            Call the methods for getting history and passwords information
+            :param myPath: Path where files are going to be located
+        """
         fire = firefox_decrypt()
         myFirefoxPath = myPath + "/firefox/"
         profiles = os.listdir(myFirefoxPath)
@@ -129,8 +154,10 @@ class Extrator(Paths):
             print fire.getHistory(myFirefoxHistoryPath)
             print fire.getDownloads(myFirefoxHistoryPath)
 
-
-    def get_All(self, directory, myPath, filesystemObject):  # Get all files recursively from a given directory
+    def get_All(self, directory, myPath, filesystemObject):
+        """
+            Get all files recursively from a given directory
+        """
         fullPath = myPath + directory
         try:
             os.makedirs(fullPath)  # Tries to create the subfolder for future saving
@@ -154,7 +181,12 @@ class Extrator(Paths):
                 print e
                 pass
 
-    def getSAM(self, myPath, filesystemObject):  # Gets the SAM file
+    def getSAM(self, myPath, filesystemObject):
+        """
+            Gets the SAM file
+            :param myPath: Path where files are going to be located
+            :filesystemObject:
+        """
         print "-", "Getting SAM"
         fileobject = filesystemObject.open(self.samPath)
         fullPath = myPath + "/SAM/"
@@ -167,7 +199,10 @@ class Extrator(Paths):
         outfile.write(filedata)
         outfile.close()
 
-    def getSYSTEM(self, myPath, filesystemObject):  # Gets the SYSTEM file
+    def getSYSTEM(self, myPath, filesystemObject):
+        """
+            Gets the SYSTEM file
+        """
         print "-", "Getting SYSTEM"
         fileobject = filesystemObject.open(self.systemPath)
         fullPath = myPath + "/SYSTEM/"
@@ -181,7 +216,10 @@ class Extrator(Paths):
         outfile.close()
 
     def getMasterKey(self, myPath, userDir,
-                     filesystemObject):  # Tries to get the masterkey looking for the protect directory in each user folder
+                     filesystemObject):
+        """
+            Tries to get the masterkey looking for the protect directory in each user folder
+        """
         print "----", "Getting masterkey"
         protectPath = self.usersPath + userDir + self.protectDir
         try:
@@ -197,7 +235,10 @@ class Extrator(Paths):
             return False
 
     def getChromeLogin(self, myPath, userDir,
-                       filesystemObject):  # Tries to get the chrome passwords' database looking for the chromeLogin file
+                       filesystemObject):
+        """
+             Tries to get the chrome passwords' database looking for the chromeLogin file
+        """
         print "----", "Getting chrome passwords' database"
         try:
             chromeUserLogin = self.usersPath + userDir + self.chromeLogin
@@ -215,6 +256,8 @@ class Extrator(Paths):
             print "[++++]Can't find chrome passwords database[++++]"
 
     def getChromeHistoryFile(self, myPath, userDir, filesystemObject):
+        """
+        """
         print "----", "Getting chrome History"
         try:
             chromeUserHistory = self.usersPath + userDir + self.chromeHistory
@@ -232,6 +275,8 @@ class Extrator(Paths):
             print "[++++]Can't find chrome history[++++]"
 
     def getFirefoxProfiles(self, myPath, userDir, filesystemObject):
+        """
+        """
         try:
             firefoxUserProfiles = self.usersPath + userDir + self.firefoxProfiles
             directoryObject = filesystemObject.open_dir(firefoxUserProfiles)
@@ -250,7 +295,11 @@ class Extrator(Paths):
         except:
             print "[++++]Can't find firefox profiles[++++]"
 
-    def getFirefoxKeys(self, myPath, userDir, filesystemObject):  # Tries to get the firefox passwords' database looking for the chromeLogin file
+    def getFirefoxKeys(self, myPath, userDir,
+                       filesystemObject):
+        """
+            Tries to get the firefox passwords' database looking for the chromeLogin file
+        """
         print "----", "Getting firefox passwords database"
         try:
             firefoxUserKeys = userDir + self.firefoxKeysFile
@@ -267,7 +316,11 @@ class Extrator(Paths):
         except:
             print "[++++]Can't find firefox passwords' database[++++]"
 
-    def getFirefoxHistory(self, myPath, userDir, filesystemObject):   # Tries to get the firefox history database looking for the chromeLogin file
+    def getFirefoxHistory(self, myPath, userDir,
+                          filesystemObject):
+        """
+            Tries to get the firefox history database looking for the chromeLogin file
+        """
         print "----", "Getting firefox history database"
         try:
             firefoxUserHistory = userDir + self.firefoxHistoryFile
@@ -284,6 +337,8 @@ class Extrator(Paths):
             print "[++++]Can't find firefox history database[++++]"
 
     def getChromePass(self, myPath, mkpDir, sid, password):
+        """
+        """
         print "--", "Getting chrome passwords"
         try:
             database = []
@@ -332,12 +387,12 @@ class Extrator(Paths):
 
             for row in c:
                 try:
-                    historyValues['URL %s' % row[0]] = {'title':row[1].encode("utf-8"), 'visitNumber':str(row[2]),
-                    'lastVisit':str(row[4]), 'firstVisit':str(row[5])}
+                    historyValues['URL %s' % row[0]] = {'title': row[1].encode("utf-8"), 'visitNumber': str(row[2]),
+                                                        'lastVisit': str(row[4]), 'firstVisit': str(row[5])}
                 except Exception, e:
                     print e
                     continue
-            
+
             print historyValues
             return historyValues
 
@@ -351,7 +406,6 @@ class Extrator(Paths):
                 print '[!] Something wrong with the database path'
             else:
                 print e
-
 
     def getChromeDowloadInfo(self, myPath):
         """
@@ -370,10 +424,10 @@ class Extrator(Paths):
             for row in c:
                 receivedBytes = ''
                 try:
-                    #"%.2f" % receivedBytes
+                    # "%.2f" % receivedBytes
                     receivedBytes = "%.2f Bytes" % float(row[5])
-                    #if receivedBytes < 1024:
-                    #downloads += 'Received Bytes = %.2f Bytes\n' % (float(row[5]))
+                    # if receivedBytes < 1024:
+                    # downloads += 'Received Bytes = %.2f Bytes\n' % (float(row[5]))
                     if float(row[5]) > 1024 and float(row[5]) < 1048576:
                         receivedBytes = "%.2f KB" % (float(row[5]) / 1024)
                     elif (float(row[5]) > 1048576 and float(row[5]) < 1073741824):
@@ -381,8 +435,9 @@ class Extrator(Paths):
                     else:
                         receivedBytes = "%.2f GB" % (float(row[5]) / 1073741824)
 
-                    downloadValues['URL %s' % row[0]] = {'currentPath':str(row[1]), 'targetPath':str(row[2]),
-                    'endTime':str(row[4]), 'startTime':str(row[5]), 'receivedBytes':str(receivedBytes)}
+                    downloadValues['URL %s' % row[0]] = {'currentPath': str(row[1]), 'targetPath': str(row[2]),
+                                                         'endTime': str(row[4]), 'startTime': str(row[5]),
+                                                         'receivedBytes': str(receivedBytes)}
 
                 except UnicodeError:
                     continue
@@ -401,7 +456,9 @@ class Extrator(Paths):
             else:
                 print e
 
+
+#Use Example
 harddrive = "777666AA_image"
-ex = Extrator(harddrive, "lazarus2015")
+ex = Extractor(harddrive, "lazarus2015")
 ex.extractFiles()
 ex.extractData()

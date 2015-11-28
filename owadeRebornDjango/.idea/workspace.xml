@@ -1,79 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd9f9f2e-df87-475c-9234-fed37aa2d728" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/__init__.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/SAM" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/SYSTEM" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/changes.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/contact.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/credits.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/rules.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/docs/user_manuals.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M0.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M0.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M10.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M10.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M100.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M100.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1000.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1000.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M101.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M101.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1100.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1100.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1400.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1400.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1410.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1410.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1420.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1420.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1600.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1600.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1700.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1700.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1710.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1710.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1720.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1720.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1731.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1731.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1800.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M1800.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M200.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M200.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M300.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M300.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M400.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M400.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M500.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M500.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M800.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M800.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M900.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A0.M900.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A1.M0.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A1.M0.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A3.M0.hash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/hashcat/examples/A3.M0.word" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/scriptBuscador.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/owade/virusScan.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/constants.py" afterPath="$PROJECT_DIR$/owade/constants.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/domcachedump.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/domcachedump.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileExtraction/getFiles.py" afterPath="$PROJECT_DIR$/owade/fileExtraction/getFiles.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/hashdump.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/hashdump.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/historyChrome.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/historyChrome.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/lsasecrets.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/lsasecrets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/models.py" afterPath="$PROJECT_DIR$/owade/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/newobj.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/newobj.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/owade.iml" afterPath="$PROJECT_DIR$/.idea/owade.iml" />
+    <list default="true" id="fd9f9f2e-df87-475c-9234-fed37aa2d728" name="Default" comment="Added comments in programAnalyze.py and started Django programAnalyze.py script for storing and show information">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../fileExtractor.py" afterPath="$PROJECT_DIR$/../fileExtractor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/rawreg.py" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/win32/rawreg.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/rockyou.txt" afterPath="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/rockyou.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="owade.iws" />
@@ -90,7 +21,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/owade$manage__1_.coverage" NAME="manage (1) Coverage Results" MODIFIED="1448662392350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/owade$main.coverage" NAME="main Coverage Results" MODIFIED="1446205624867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/owade$manage.coverage" NAME="manage Coverage Results" MODIFIED="1448668188719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/owade$manage.coverage" NAME="manage Coverage Results" MODIFIED="1448669543349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -104,26 +35,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="fileExtractor.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fileExtractor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../fileExtractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
+            <state vertical-scroll-proportion="1.0501254">
+              <caret line="458" column="0" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
               <folding>
-                <marker date="1448651484945" expanded="true" signature="13808:14986" placeholder="SELECT urls...urls..." />
-                <marker date="1448651484945" expanded="true" signature="16255:16553" placeholder="SELECT url, ..downloads..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getFiles.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.892857">
-              <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#118#128#0" expanded="true" />
+                <marker date="1448670647903" expanded="true" signature="15013:16191" placeholder="SELECT urls...urls..." />
+                <marker date="1448670647903" expanded="true" signature="17487:17785" placeholder="SELECT url, ..downloads..." />
               </folding>
             </state>
           </provider>
@@ -133,20 +53,10 @@
         <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
               <folding>
-                <element signature="e#1#11#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pwdump.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33239436">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -155,8 +65,31 @@
         <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
+              <caret line="238" column="12" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="12" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pwdump.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addrspace.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/addrspace.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+              <folding>
+                <element signature="e#1102#1111#0" expanded="true" />
+                <marker date="1448649527274" expanded="true" signature="1204:1397" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -181,23 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/owade/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="139" column="41" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="program.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/owade/program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.892857">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.607143">
+              <caret line="74" column="11" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
               <folding>
                 <element signature="e#1242#1275#0" expanded="true" />
               </folding>
@@ -217,6 +138,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="CarlosLannisterA" />
         <option value="CarlosLannister" />
       </list>
     </option>
@@ -265,11 +187,14 @@
         <option value="$PROJECT_DIR$/owade/program.py" />
         <option value="$PROJECT_DIR$/owade/urls.py" />
         <option value="$PROJECT_DIR$/owade/views.py" />
-        <option value="$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py" />
         <option value="$PROJECT_DIR$/owade/models.py" />
         <option value="$PROJECT_DIR$/owade/constants.py" />
         <option value="$PROJECT_DIR$/owade/fileExtraction/getFiles.py" />
         <option value="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py" />
+        <option value="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/addrspace.py" />
+        <option value="$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py" />
+        <option value="$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py" />
+        <option value="$PROJECT_DIR$/../fileExtractor.py" />
       </list>
     </option>
   </component>
@@ -397,13 +322,61 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="owade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="owadeRebornDjango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="owade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fileAnalyze" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashcatLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="owade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="owadeRebornDjango" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="owade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fileAnalyze" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hashcatLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fileExtractor.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
@@ -705,7 +678,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448661284053</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="getFiles.py now working with Django. SAM, SYSTEM, chrome files and firefox files obtained.">
+      <created>1448668391588</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1448668391588</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -715,10 +694,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39747635" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39747635" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" sideWeight="0.50608826" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3280757" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961948" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -728,7 +708,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39966556" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -746,8 +725,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Project adapted to pycharm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project adapted to pycharm" />
+    <MESSAGE value="getFiles.py now working with Django. SAM, SYSTEM, chrome files and firefox files obtained." />
+    <MESSAGE value="Added comments in programAnalyze.py and started Django programAnalyze.py script for storing and show information" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments in programAnalyze.py and started Django programAnalyze.py script for storing and show information" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -793,62 +776,42 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
-          <line>183</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
-          <line>193</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
-          <line>197</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
-          <line>182</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="33" />
+          <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py</url>
+          <line>236</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py</url>
           <line>21</line>
-          <option name="timeStamp" value="34" />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="35" />
+          <line>20</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py</url>
+          <line>223</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py</url>
+          <line>241</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py</url>
+          <line>242</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py</url>
+          <line>240</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -890,7 +853,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#1#11#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -968,7 +931,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1#11#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1213,16 +1176,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/owade/program.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.892857">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="e#1242#1275#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/owade/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.607143">
@@ -1239,23 +1192,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../fileExtractor.py">
+    <entry file="file://$PROJECT_DIR$/owade/program.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.607143">
+          <caret line="74" column="11" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
+          <folding>
+            <element signature="e#1242#1275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <marker date="1448651484945" expanded="true" signature="13808:14986" placeholder="SELECT urls...urls..." />
-            <marker date="1448651484945" expanded="true" signature="16255:16553" placeholder="SELECT url, ..downloads..." />
-          </folding>
+          <caret line="809" column="0" selection-start-line="809" selection-start-column="0" selection-end-line="809" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/owade/fileExtraction/getFiles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.892857">
-          <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33239436">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/framework/addrspace.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding>
+            <element signature="e#1102#1111#0" expanded="true" />
+            <marker date="1448649527274" expanded="true" signature="1204:1397" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1263,15 +1234,7 @@
     <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/lib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.428169">
-          <caret line="809" column="0" selection-start-line="809" selection-start-column="0" selection-end-line="809" selection-end-column="0" />
+          <caret line="238" column="12" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1279,18 +1242,30 @@
     <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/programAnalyze.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
           <folding>
-            <element signature="e#1#11#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/owade/fileAnalyze/hashcatLib/pwdump.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33239436">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../fileExtractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0501254">
+          <caret line="458" column="0" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
+          <folding>
+            <element signature="e#118#128#0" expanded="true" />
+            <marker date="1448670647903" expanded="true" signature="15013:16191" placeholder="SELECT urls...urls..." />
+            <marker date="1448670647903" expanded="true" signature="17487:17785" placeholder="SELECT url, ..downloads..." />
+          </folding>
         </state>
       </provider>
     </entry>

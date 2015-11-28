@@ -1,4 +1,3 @@
-
 import sys
 import re
 from owade.constants import *
@@ -6,7 +5,7 @@ from owade.process import Process
 from owade.models import *
 
 
-#BROWSER
+# BROWSER
 
 from owade.fileAnalyze.historyFirefox import GetFirefoxHistory
 from owade.fileAnalyze.chrome import GetChromePasswords
@@ -20,9 +19,7 @@ class Paths:
 '''
 
 
-
 class ProgramAnalyze(Process):
-
     def __init__(self, internLog, terminalLog, hardDrive, overWrite):
         Process.__init__(self, internLog, terminalLog)  # Each Object Extractor has its own harddrive
         self.hardDrive = hardDrive
@@ -36,8 +33,8 @@ class ProgramAnalyze(Process):
                 sam = FILE_DIR + folder + "/SAM/SAM"  # Here is the SAM
                 system = FILE_DIR + folder + "/SYSTEM/SYSTEM"  # Here is the SYSTEM
 
-                #Password Cracking
-                passwordDic = {} #User;Password
+                # Password Cracking
+                passwordDic = {}  # User;Password
                 mod = PwDump()
                 passwordDic = mod.main(system, sam)
                 partitionPath = FILE_DIR + folder + "/Users/"
@@ -72,15 +69,15 @@ class ProgramAnalyze(Process):
                     else:
                         self.internLog_.addLog("Unable to decrypt Chrome Password DB.", 1)
 
-
                     mod = GetFirefoxHistory()
-                    dic = mod.main(myPath)      # no saca dic
+                    dic = mod.main(myPath)  # no saca dic
                     if dic != None:
                         userInfos.update(dic)
 
                     infos[user] = userInfos
                     # self.updateDbGenericDic({self.__class__.__name__:infos}, partition)
                     # Resto de modulos de extraer datos aqui
+
 
 '''
 hdrive = "777666AA_image"

@@ -235,7 +235,12 @@ def dump_hashes(sysaddr, samaddr):
 
 def dump_file_hashes(syshive_fname, samhive_fname):
     print syshive_fname
-    sysaddr = HiveFileAddressSpace(syshive_fname)
-    samaddr = HiveFileAddressSpace(samhive_fname)
-    var=dump_hashes(sysaddr, samaddr)
+    print samhive_fname
+    var = ''
+    try:
+        sysaddr = HiveFileAddressSpace(syshive_fname)
+        samaddr = HiveFileAddressSpace(samhive_fname)
+        var=dump_hashes(sysaddr, samaddr)
+    except Exception as e:
+        print e
     return var
