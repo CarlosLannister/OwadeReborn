@@ -35,7 +35,7 @@ def checkConstant(dir, isdir=True):
 #################
 ##Project main directory
 PROJECT_DIR = "/opt/"
-checkConstant(PROJECT_DIR + "OwadeHackaton")
+checkConstant(PROJECT_DIR + "owadeRebornDjango")
 
 ##DPAPI directory
 DPAPI_DIR = PROJECT_DIR + "dpapick/"
@@ -75,7 +75,7 @@ checkConstant(FILE_DIR)
 #################
 ### LIB DIR (shouldn't be modified)
 #################
-LIB_DIR = PROJECT_DIR + "OwadeHackaton/lib/"
+LIB_DIR = PROJECT_DIR + "owadeRebornDjango/lib/"
 ##ff_key3db_dump directory
 KEY3DB_DIR = LIB_DIR + "ff_key3db_dump/"
 checkConstant(KEY3DB_DIR)
@@ -98,10 +98,10 @@ checkConstant(GEOQUERY, False)
 ### DJANGO DIR (shouldn't be modified)
 #################
 ##Where to save the database
-DATABASE_DIR = PROJECT_DIR + "OwadeHackaton/database/"
+DATABASE_DIR = PROJECT_DIR + "owadeRebornDjango/database/"
 checkConstant(DATABASE_DIR)
 ##Where to find the template
-TEMPLATE_DIR = PROJECT_DIR + "OwadeHackaton/templates/"
+TEMPLATE_DIR = PROJECT_DIR + "owadeRebornDjango/templates/"
 checkConstant(TEMPLATE_DIR)
 
 ######################

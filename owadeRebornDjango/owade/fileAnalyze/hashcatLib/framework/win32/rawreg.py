@@ -20,6 +20,7 @@
 """
 
 from struct import unpack
+from owade.fileAnalyze.hashcatLib.framework.newobj import Obj, Pointer
 
 from owade.fileAnalyze.hashcatLib.framework import *
 
