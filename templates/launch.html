@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block addScript %}
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#autoRefreshInternLog').load('refresh_intern_log').fadeIn("slow");
+});
+var refreshId = setInterval(function()
+{
+     $('#autoRefreshInternLog').animate({opacity : 0},500, function() {
+        $.get('refresh_intern_log', function(data) {
+            $('#autoRefreshInternLog').html(data).animate({opacity : 1},500);
+        })
+     });
+}, 5000);
+
+$(document).ready(function() {
+    $('#autoRefreshTerminalLog').load('refresh_terminal_log').fadeIn("slow");
+});
+var refreshId = setInterval(function()
+{
+     $('#autoRefreshTerminalLog').animate({opacity : 0},500, function() {
+        $.get('refresh_terminal_log', function(data) {
+            $('#autoRefreshTerminalLog').html(data).animate({opacity : 1},500);
+        })
+     });
+}, 5000);
+</script>
+{% endblock addScript %}
+
+{% block pageTitle %}Check launched process{% endblock pageTitle %}
+
+{% block pageContent %}
+<div id="table-content">
+    <h2>Status</h2>
+    <h3>{{ status }}</h3>
+    <h2>Log</h2>
+    <div id="autoRefreshInternLog"></div>
+    <br />
+    <h2>Terminal Log</h2>
+    <div id="autoRefreshTerminalLog"></div>
+    <br />
+    <form action="launch" method="post">{% csrf_token %}
+        <input type="submit" value="Cancel" name="cancel" class="button_cancel" />
+    </form>
+</div>
+{% endblock pageContent %}
