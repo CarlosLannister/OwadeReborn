@@ -38,16 +38,6 @@ PROJECT_DIR = "/opt/"
 PROJECT_NAME = "OwadeReborn/"
 checkConstant(PROJECT_DIR + PROJECT_NAME)
 
-##DPAPI directory
-DPAPI_DIR = PROJECT_DIR + "dpapick/"
-checkConstant(DPAPI_DIR)
-sys.path.append(DPAPI_DIR)
-
-##John the Ripper directory
-JOHN_DIR = PROJECT_DIR + "jtr/run"
-checkConstant(JOHN_DIR)
-sys.path.append(JOHN_DIR)
-
 HASHCAT_DIR = PROJECT_DIR + PROJECT_NAME + "owade/fileAnalyze/hashcatLib/hashcat"
 #################
 ### DATABASE CONFIGURATION
@@ -57,7 +47,6 @@ DATABASE_USER='postgres'
 DATABASE_PASSWORD='postgres'
 DATABASE_HOST='localhost'
 DATABASE_PORT='5432'
-
 
 #################
 ### STOCKAGE DIR (need a lot of disk space)
