@@ -12,12 +12,13 @@ from owade.fileAnalyze.chrome import GetChromePasswords
 from owade.fileAnalyze.historyChrome import GetChromeHistory
 from owade.fileAnalyze.hashcatLib.pwdump import PwDump
 from owade.fileAnalyze.firefox import GetFirefoxPasswords
+from owade.fileAnalyze.wifi import GetWifiPassword
 import datetime
 
 class ProgramAnalyze(Process):
 
     def __init__(self, internLog, terminalLog, hardDrive, report, dictionary, chromePassword,
-                 chromeHistory, firefoxPassword, firefoxHistory):
+                 chromeHistory, firefoxPassword, firefoxHistory, wifi):
         Process.__init__(self, internLog, terminalLog)
         self.hardDrive = hardDrive
         self.report = report
@@ -26,6 +27,7 @@ class ProgramAnalyze(Process):
         self.chromeHistory = chromeHistory
         self.firefoxPassword = firefoxPassword
         self.firefoxHistory = firefoxHistory
+        self.wifi = wifi
 
     def getReport(self, dic, myPath):
         self.getChromeHistoryReport(dic, myPath)
@@ -140,15 +142,42 @@ class ProgramAnalyze(Process):
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
         self.internLog_.addLog("Firefox downloads report on " + fullPath, 1)
 
+    def getWifiReport(self, dic, myPath):
+        urlList = []
+        reportList = []
+        for SSID in dic:
+            urlList.append(SSID)
+            urlList.append(dic[SSID])
+            reportList.append(urlList)
+            urlList = []
+
+        fullPath = myPath + "wifi.csv"
+        ptest = pd.DataFrame(reportList , columns=['SSID', 'password'])
+        ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
+        self.internLog_.addLog("Wifi report on " + fullPath, 1)
 
     def run(self):
         self.internLog_.addLog("Getting data from extracted files", 1)
-
+        infos = {}
         folders = os.listdir(FILE_DIR)
         for folder in folders:
             if self.hardDrive.serial in folder:  # check if harddrive is in the folder's name
-                sam = FILE_DIR + "/" + folder + "/SAM/SAM"  # Here is the SAM
-                system = FILE_DIR + "/" + folder + "/SYSTEM/SYSTEM"  # Here is the SYSTEM
+                myPath = FILE_DIR + "/" + folder
+                sam = myPath + "/SAM/SAM"  # Here is the SAM
+                system = myPath + "/SYSTEM/SYSTEM"  # Here is the SYSTEM
+                security = myPath + "/SECURITY/SECURITY"
+                systemMaster = myPath + mySystemMasterKey
+                wifiProfile = myPath + myWifiProfile
+
+                if self.wifi:
+                    self.internLog_.addLog("Getting Wifi data", 1)
+                    mod = GetWifiPassword()
+                    wifiDic = mod.main(system, security, systemMaster, wifiProfile)
+
+                    if wifiDic == None:
+                        self.internLog_.addLog("Can't find wifi files", 1)
+                else:
+                    pass
 
                 # Password Cracking
                 if self.dictionary == "":
@@ -159,7 +188,6 @@ class ProgramAnalyze(Process):
                 passwordDic = mod.main(system, sam)
                 partitionPath = FILE_DIR + "/" + folder + "/Users/"
                 users = os.listdir(partitionPath)
-                infos = {}
 
                 for user in users:  # For each user in partition
                     userInfos = {}
@@ -217,6 +245,7 @@ class ProgramAnalyze(Process):
                         else:
                             self.internLog_.addLog("Can't find Firefox history database", 1)
 
+
                     infos[user] = userInfos
                     for user in infos:
                         print user
@@ -228,6 +257,8 @@ class ProgramAnalyze(Process):
                             os.makedirs(myReportPath)
                         except:
                             pass
+                        if wifiDic != None:
+                            self.getWifiReport(wifiDic, myReportPath)
                         self.getReport(userInfos, myReportPath)
 
 

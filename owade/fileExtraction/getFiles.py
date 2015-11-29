@@ -16,7 +16,7 @@ from owade.constants import *
 
 class GetFiles(Process):
     def __init__(self, internLog, terminalLog, hardDrive, report, chromePassword,
-                 chromeHistory, firefoxPassword, firefoxHistory):
+                 chromeHistory, firefoxPassword, firefoxHistory, wifi):
         Process.__init__(self, internLog, terminalLog)
         self.hardDrive = hardDrive
         self.report = report
@@ -24,6 +24,7 @@ class GetFiles(Process):
         self.chromeHistory = chromeHistory
         self.firefoxPassword = firefoxPassword
         self.firefoxHistory = firefoxHistory
+        self.wifi = wifi
 
     def getSAM(self, myPath, filesystemObject):  # Gets the SAM file
         self.internLog_.addLog("Getting SAM", 1)
@@ -50,6 +51,47 @@ class GetFiles(Process):
         filedata = fileobject.read_random(0, fileobject.info.meta.size)
         outfile.write(filedata)
         outfile.close()
+
+    def getSECURITY(self, myPath, filesystemObject):  # Gets the SYSTEM file
+        self.internLog_.addLog("Getting SECURITY", 1)
+        fileobject = filesystemObject.open(securityPath)
+        fullPath = myPath + "/SECURITY/"
+        try:
+            os.makedirs(fullPath)
+        except:
+            pass
+        outfile = open(fullPath + "SECURITY", 'w')
+        filedata = fileobject.read_random(0, fileobject.info.meta.size)
+        outfile.write(filedata)
+        outfile.close()
+
+    def getSystemMasterKey(self,  myPath, filesystemObject):
+        self.internLog_.addLog("Getting system masterkey", 1)
+        try:
+            self.get_All(systemMasterKey, myPath + mySystemMasterKey, filesystemObject)  # Search recursive for the files
+            return True  # It has found the file/s
+        except:
+            self.internLog_.addLog("[++++]Can't have system masterKey[++++]", 1)
+            try:
+                os.removedirs(
+                    myPath + mySystemMasterKey)  # If user is not valid, we delete the directory in users folder (users like 'all users', 'default' should fail)
+            except:
+                pass
+            return False
+
+    def getWifiFiles(self,  myPath, filesystemObject):
+        self.internLog_.addLog("Getting wifi files", 1)
+        try:
+            self.get_All(wifiDir, myPath + myWifiProfile, filesystemObject)  # Search recursive for the files
+            return True  # It has found the file/s
+        except:
+            self.internLog_.addLog("[++++]Can't have wifi files[++++]", 1)
+            try:
+                os.removedirs(
+                    myPath + myWifiProfile)  # If user is not valid, we delete the directory in users folder (users like 'all users', 'default' should fail)
+            except:
+                pass
+            return False
 
     def getMasterKey(self, myPath, userDir,
                      filesystemObject):  # Tries to get the masterkey looking for the protect directory in each user folder
@@ -169,6 +211,10 @@ class GetFiles(Process):
                 try:
                     self.getSAM(myPath, filesystemObject)  # Gets the SAM file
                     self.getSYSTEM(myPath, filesystemObject)  # Gets the SYSTEM file
+                    self.getSECURITY(myPath, filesystemObject)  # Gets the SECURITY file
+                    self.getSystemMasterKey(myPath, filesystemObject)
+                    if self.wifi:
+                        self.getWifiFiles(myPath, filesystemObject)
                     # Resto de modulos sin usuario
                     print "-", "USERS:"
                     directoryObject = filesystemObject.open_dir("/Users/")  # Open users directory

@@ -25,11 +25,9 @@ class GetFirefoxHistory:
             dic['url'] = row[0]
             dic['visit_count'] = row[1]
             dic['last_visit_date'] = str(last_visit_date)
-            '''listrows.append(row[0])  # url
-            listrows.append(row[1])  # visit_count
-            listrows.append(str(last_visit_date))  # last_visit_date'''
 
             listhistory.append(dic)
+            dic = {}
         return listhistory
 
     def getDownloads(self, db):
@@ -63,6 +61,7 @@ class GetFirefoxHistory:
             dic['namefile'] = namefile
 
             listdownloads.append(dic)
+            dic = {}
 
         return listdownloads
 
@@ -78,6 +77,6 @@ class GetFirefoxHistory:
             history[profile] = self.getHistory(myFirefoxHistoryPath)
             downloads[profile] = self.getDownloads(myFirefoxHistoryPath)
 
-            dic = {"GetFirefoxHistory" : history, "GetFirefoxDownloads" : downloads}
+        dic = {"GetFirefoxHistory" : history, "GetFirefoxDownloads" : downloads}
 
         return dic

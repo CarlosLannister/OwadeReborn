@@ -65,7 +65,7 @@ DATABASE_PORT='5432'
 ##Where to stock disk image after ddrescue
               #/media/USERNAME/HDNAME/
 #EXT_HDRIVE = subprocess.check_output("find /media -name storage", shell=True).rstrip()
-EXT_HDRIVE = "/media/lannister/TOSHIBA EXT/storage"
+EXT_HDRIVE = "/media/hackaton/Lazarus/storage"
 #Aqui metodo post
 
 IMAGE_DIR = EXT_HDRIVE + "/image"
@@ -88,14 +88,26 @@ checkConstant(TEMPLATE_DIR)
 
 ######################
 #Forensic constants
-# Masterkey
-protectDir = "/Appdata/Roaming/Microsoft/Protect/"
 
 # SAM
 samPath = "/Windows/System32/config/SAM"
 
 # SYSTEM
 systemPath = "/Windows/System32/config/SYSTEM"
+
+# SECURITY
+securityPath = "/Windows/System32/config/SECURITY"
+
+#System MasterKey
+systemMasterKey = "/Windows/System32/Microsoft/Protect/S-1-5-18/User/"
+mySystemMasterKey = "/systemMasterKey/"
+
+# User Masterkey
+protectDir = "/Appdata/Roaming/Microsoft/Protect/"
+
+# Wifi
+wifiDir = "/ProgramData/Microsoft/Wlansvc/"
+myWifiProfile = "/wifi/"
 
 # Chrome
 chromeLoginFile = "Login Data"
