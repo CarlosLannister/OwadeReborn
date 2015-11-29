@@ -43,23 +43,23 @@ class Program:
 
     tasks_form_ = (
         ('0', 'Extract files from dump'),
-        ('1', 'Files analysis'),
-        ('2', 'Extract windows registery'),
+        #('1', 'Files analysis'),
+        #('2', 'Extract windows registery'),
         #('3', 'Extract data from sys files'),
-        ('4', 'Get password in sam'),
+        #('4', 'Get password in sam'),
         ('5', 'Program analysis'),
-        ('6', 'Web analysis'),
+        #('6', 'Web analysis'),
         )
 
     def task(self, id, *args, **kwargs):
         values = {
             '0':GetFiles,
-            '1':FilesStatistics,
-            '2':WindowsRegistery,
+            #'1':FilesStatistics,
+            #2':WindowsRegistery,
             #'3':LsaMemParser,
-            '4':UserPassword,
+            #'4':UserPassword,
             '5':ProgramAnalyze,
-            '6':WebAnalyze,
+            #'6':WebAnalyze,
             }
         return self.launch(values[id], *args, **kwargs)
 

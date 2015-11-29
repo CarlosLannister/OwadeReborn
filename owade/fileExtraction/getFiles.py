@@ -16,7 +16,7 @@ from owade.constants import *
 
 class GetFiles(Process):
     def __init__(self, internLog, terminalLog, hardDrive, report, chromePassword,
-                 chromeHistory, firefoxPassword, firefoxHistory, wifi):
+                 chromeHistory, firefoxPassword, firefoxHistory, wifi, outlook):
         Process.__init__(self, internLog, terminalLog)
         self.hardDrive = hardDrive
         self.report = report
@@ -25,6 +25,7 @@ class GetFiles(Process):
         self.firefoxPassword = firefoxPassword
         self.firefoxHistory = firefoxHistory
         self.wifi = wifi
+        self.outlook = outlook
 
     def getSAM(self, myPath, filesystemObject):  # Gets the SAM file
         self.internLog_.addLog("Getting SAM", 1)
@@ -194,6 +195,23 @@ class GetFiles(Process):
         except:
             self.internLog_.addLog("[++++]Can't find firefox profiles[++++]", 1)
 
+    def getNTUser(self, myPath, userDir, filesystemObject):
+        self.internLog_.addLog("Getting NTUSER.dat for Outlook", 1)
+        try:
+            ntuserFile = "/Users/" + userDir + "/" + NTUser
+            fileobject = filesystemObject.open(ntuserFile)
+            myNTUserPath = myPath + "/Users/" + userDir + "/NTUSER/"
+            try:
+                os.makedirs(myNTUserPath)
+            except:
+                pass
+            outfile = open(myNTUserPath + NTUser, 'w')
+            filedata = fileobject.read_random(0, fileobject.info.meta.size)
+            outfile.write(filedata)
+            outfile.close()
+        except:
+            self.internLog_.addLog("[++++]Can't find NTUSER.dat[++++]", 1)
+
     def run(self):  # Main function for extract the important files from the harddrive (only extract files from NTFS partitions)
         self.internLog_.addLog("ProgramAnalyze process launched", 1)
         print self.hardDrive.image_path()
@@ -225,6 +243,10 @@ class GetFiles(Process):
                             done = self.getMasterKey(myPath, userDir,
                                                      filesystemObject)  # Try to get masterkey from users
                             if done:  # We must have the masterkey for that user
+
+                                if self.outlook:
+                                    self.getNTUser(myPath, userDir,
+                                                        filesystemObject) # Try to get NTUSER.dat from each user for outlook
 
                                 if self.chromePassword:
                                     self.getChromeLogin(myPath, userDir,

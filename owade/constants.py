@@ -1,22 +1,4 @@
 
-#############################################################################
-##                                                                         ##
-## This file is part of Owade : www.owade.org                              ##
-## Offline Windows Analyzer and Data Extractor                             ##
-##                                                                         ##
-##  Authors:                                                               ##
-##  Elie Bursztein <owade@elie.im>                                         ##
-##  Ivan Fontarensky <ivan.fontarensky@cassidian.com>                      ##
-##  Matthieu Martin <matthieu.mar+owade@gmail.com>                         ##
-##  Jean-Michel Picod <jean-michel.picod@cassidian.com>                    ##
-##                                                                         ##
-## This program is distributed under GPLv3 licence (see LICENCE.txt)       ##
-##                                                                         ##
-#############################################################################
-import os.path
-__author__="ashe"
-__date__ ="$May 24, 2011 6:21:13 PM$"
-
 import os
 import exceptions
 import sys
@@ -93,6 +75,8 @@ mySystemMasterKey = "/systemMasterKey/"
 
 # User Masterkey
 protectDir = "/Appdata/Roaming/Microsoft/Protect/"
+credhistFile = "CREDHIST"
+NTUser = "NTUSER.DAT"
 
 # Wifi
 wifiDir = "/ProgramData/Microsoft/Wlansvc/"

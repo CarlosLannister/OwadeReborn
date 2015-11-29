@@ -13,12 +13,13 @@ from owade.fileAnalyze.historyChrome import GetChromeHistory
 from owade.fileAnalyze.hashcatLib.pwdump import PwDump
 from owade.fileAnalyze.firefox import GetFirefoxPasswords
 from owade.fileAnalyze.wifi import GetWifiPassword
+from owade.fileAnalyze.outlook import GetOutlookPassword
 import datetime
 
 class ProgramAnalyze(Process):
 
     def __init__(self, internLog, terminalLog, hardDrive, report, dictionary, chromePassword,
-                 chromeHistory, firefoxPassword, firefoxHistory, wifi):
+                 chromeHistory, firefoxPassword, firefoxHistory, wifi, outlook):
         Process.__init__(self, internLog, terminalLog)
         self.hardDrive = hardDrive
         self.report = report
@@ -28,6 +29,7 @@ class ProgramAnalyze(Process):
         self.firefoxPassword = firefoxPassword
         self.firefoxHistory = firefoxHistory
         self.wifi = wifi
+        self.outlook = outlook
 
     def getReport(self, dic, myPath):
         self.getChromeHistoryReport(dic, myPath)
@@ -36,6 +38,7 @@ class ProgramAnalyze(Process):
         self.getFirefoxPasssordsReport(dic, myPath)
         self.getFirefoxHistoryReport(dic, myPath)
         self.getFirefoxDownloadsReport(dic,myPath)
+        self.getOutlookReport(dic,myPath)
 
     def getChromeDownloadsReport(self, dic, myPath):
         urlList = []
@@ -156,6 +159,15 @@ class ProgramAnalyze(Process):
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
         self.internLog_.addLog("Wifi report on " + fullPath, 1)
 
+    def getOutlookReport(self, dic, myPath):
+        user = dic['GetOutlookPassword']['user']
+        password = dic['GetOutlookPassword']['password']
+
+        fullPath = myPath + "outlook.csv"
+        ptest = pd.DataFrame([ [user, password] ] , columns=['user', 'password'])
+        ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
+        self.internLog_.addLog("Outlook report on " + fullPath, 1)
+
     def run(self):
         self.internLog_.addLog("Getting data from extracted files", 1)
         infos = {}
@@ -200,8 +212,20 @@ class ProgramAnalyze(Process):
                                     fi):  # User's sid is the name of the only folder in protect
                             sid = fi  # Here is the SID
                     mkpDir = userProtectDir + sid  # Here is the masterkey directory
-
+                    credhist = userProtectDir + credhistFile
+                    ntUserFile = myPath + "/NTUSER/" + NTUser
                     # Start getting the data
+
+                    if self.outlook:
+                        self.internLog_.addLog("Getting Outlook passwords", 1)
+                        mod = GetOutlookPassword()
+                        dic = mod.main(mkpDir, sid, credhist, ntUserFile, self.password)
+                        print dic
+                        if dic != None:
+                            userInfos.update(dic)
+                        else:
+                            self.internLog_.addLog("Can't find Firefox history database", 1)
+
                     if self.chromePassword:
                         self.internLog_.addLog("Getting Chrome passwords", 1)
                         if self.password != None:
@@ -244,7 +268,6 @@ class ProgramAnalyze(Process):
                             userInfos.update(dic)
                         else:
                             self.internLog_.addLog("Can't find Firefox history database", 1)
-
 
                     infos[user] = userInfos
                     for user in infos:

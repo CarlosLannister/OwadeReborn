@@ -131,6 +131,7 @@ def launchAnalyze(request):
         firefoxPassword = forms.BooleanField(initial=True,required=False)
         firefoxHistory = forms.BooleanField(initial=True,required=False)
         wifi = forms.BooleanField(initial=True,required=False)
+        outlook = forms.BooleanField(initial=True,required=False)
 
     launch = False
     if request.method == 'POST':
@@ -146,18 +147,19 @@ def launchAnalyze(request):
             firefoxPassword = form.cleaned_data['firefoxPassword']
             firefoxHistory = form.cleaned_data['firefoxHistory']
             wifi = form.cleaned_data['wifi']
+            outlook = form.cleaned_data['outlook']
 
     else:
         form = AnalyzeForm()
 
     if launch:
         if task == "0":
-            if g_program.task(task, hardDrive, report, chromePasswords, chromeHistory,firefoxPassword,firefoxHistory, wifi):
+            if g_program.task(task, hardDrive, report, chromePasswords, chromeHistory,firefoxPassword,firefoxHistory, wifi, outlook):
                 return HttpResponseRedirect('launch')
             else:
                 status = "Launch failure, a process is probably running"
         else:
-            if g_program.task(task, hardDrive, report, dictionary, chromePasswords, chromeHistory,firefoxPassword,firefoxHistory, wifi):
+            if g_program.task(task, hardDrive, report, dictionary, chromePasswords, chromeHistory,firefoxPassword,firefoxHistory, wifi, outlook):
                 return HttpResponseRedirect('launch')
             else:
                 status = "Launch failure, a process is probably running"
