@@ -28,7 +28,7 @@ import base64
 
 from owade.models import *
 from owade.process import Process
-from owade.constants import JOHN_DIR
+
 
 from owade.fileAnalyze.creddump.win32.hashdump import owade_get_hashes
 from owade.fileAnalyze.creddump.win32.lsasecrets import get_file_secrets
