@@ -35,7 +35,7 @@ def checkConstant(dir, isdir=True):
 #################
 ##Project main directory
 PROJECT_DIR = "/opt/"
-PROJECT_NAME = "owadeRebornDjango/"
+PROJECT_NAME = "OwadeReborn/"
 checkConstant(PROJECT_DIR + PROJECT_NAME)
 
 ##DPAPI directory
@@ -65,7 +65,7 @@ DATABASE_PORT='5432'
 ##Where to stock disk image after ddrescue
               #/media/USERNAME/HDNAME/
 #EXT_HDRIVE = subprocess.check_output("find /media -name storage", shell=True).rstrip()
-EXT_HDRIVE = "/media/hackaton/Lazarus/storage"
+EXT_HDRIVE = "/media/lannister/TOSHIBA EXT/storage"
 #Aqui metodo post
 
 IMAGE_DIR = EXT_HDRIVE + "/image"
@@ -80,10 +80,10 @@ checkConstant(FILE_DIR)
 ### DJANGO DIR (shouldn't be modified)
 #################
 ##Where to save the database
-DATABASE_DIR = PROJECT_DIR + "owadeRebornDjango/database/"
+DATABASE_DIR = PROJECT_DIR + "OwadeReborn/database/"
 checkConstant(DATABASE_DIR)
 ##Where to find the template
-TEMPLATE_DIR = PROJECT_DIR + "owadeRebornDjango/templates/"
+TEMPLATE_DIR = PROJECT_DIR + "OwadeReborn/templates/"
 checkConstant(TEMPLATE_DIR)
 
 ######################
