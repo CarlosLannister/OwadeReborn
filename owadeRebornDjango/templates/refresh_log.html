@@ -1,9 +1,0 @@
-{% load url from future %}
-{% load static %}
-{% get_static_prefix as STATIC_PREFIX %}
-
-<ul>
-{% for line in log %}
-    <li>{{ line.line }}</li>
-{% endfor %}
-</ul>
