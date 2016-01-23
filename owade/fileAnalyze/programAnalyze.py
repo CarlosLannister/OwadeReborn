@@ -16,8 +16,8 @@ from owade.fileAnalyze.wifi import GetWifiPassword
 from owade.fileAnalyze.outlook import GetOutlookPassword
 import datetime
 
-class ProgramAnalyze(Process):
 
+class ProgramAnalyze(Process):
     def __init__(self, internLog, terminalLog, hardDrive, report, dictionary, chromePassword,
                  chromeHistory, firefoxPassword, firefoxHistory, wifi, outlook):
         Process.__init__(self, internLog, terminalLog)
@@ -37,8 +37,8 @@ class ProgramAnalyze(Process):
         self.getChromePasswordsReport(dic, myPath)
         self.getFirefoxPasssordsReport(dic, myPath)
         self.getFirefoxHistoryReport(dic, myPath)
-        self.getFirefoxDownloadsReport(dic,myPath)
-        self.getOutlookReport(dic,myPath)
+        self.getFirefoxDownloadsReport(dic, myPath)
+        self.getOutlookReport(dic, myPath)
 
     def getChromeDownloadsReport(self, dic, myPath):
         urlList = []
@@ -52,11 +52,66 @@ class ProgramAnalyze(Process):
             urlList = []
 
         fullPath = myPath + "chromeDownloads.csv"
-        ptest = pd.DataFrame(reportList , columns=['url', 'path', 'time', 'size' ])
+        ptest = pd.DataFrame(reportList, columns=['url', 'path', 'time', 'size'])
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
+
+
+        json = """
+              {
+                "title": {
+                    "text": {
+                     "headline": "Downloads",
+                     "text": "Chrome downloads timeline"
+                     }
+              },
+
+            """
+        events = """ "events":
+            [
+            """
+
+        for download in reportList[0:len(reportList) - 1]:
+            print download
+            events = events + """{
+      			"start_date": {
+      				"month":\"""" + str(download[2][5:7]) + """\",
+      				"day": \"""" + str(download[2][8:10]) + """\",
+      				"year": \"""" + str(download[2][0:4]) + """\"
+      			},
+      				 "text": {
+        	  "headline": "Download:""" + download[0] + """\",
+        	  "text": \"""" + str(download[1]).replace("\\", "/") + """\"
+      	  }
+    	  },
+		"""
+
+        events = events + """{
+      			"start_date": {
+      				"month": \"""" + str(reportList[len(reportList) - 1][2][5:7]) + """\",
+      				"day": \"""" + str(reportList[len(reportList) - 1][2][8:10]) + """\",
+      				"year": \"""" + str(reportList[len(reportList) - 1][2][0:4]) + """\"
+      			},
+      				 "text": {
+        	  "headline": "Last Download:""" + str(reportList[len(reportList) - 1][0]) + """\",
+        	  "text": \"""" + str(reportList[len(reportList) - 1][1]).replace("\\", "/") + """\"
+      	  }
+    	  }
+		"""
+
+        events = events + """ ]
+	    }"""
+
+        json = json + events
+
+        jsonPath = myPath +"chromeDownload.json"
+        jsonFile = open(jsonPath, "w")
+        jsonFile.write(json)
+        jsonFile.close()
+
+
         self.internLog_.addLog("Chrome history report on " + fullPath, 1)
 
-    def getChromeHistoryReport(self,dic, myPath):
+    def getChromeHistoryReport(self, dic, myPath):
         urlList = []
         reportList = []
         for url in dic['GetChromeHistory']['history']:
@@ -69,8 +124,61 @@ class ProgramAnalyze(Process):
             urlList = []
 
         fullPath = myPath + "chromeHistory.csv"
-        ptest = pd.DataFrame(reportList , columns=['url', 'lastVisit', 'firstVisit', 'visitNumber', 'tittle' ])
+        ptest = pd.DataFrame(reportList, columns=['url', 'lastVisit', 'firstVisit', 'visitNumber', 'tittle'])
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
+
+        json = """
+              {
+                "title": {
+                    "text": {
+                     "headline": "History",
+                     "text": "Chrome History timeline"
+                     }
+              },
+
+            """
+        events = """ "events":
+            [
+            """
+        print reportList
+        for download in reportList[0:len(reportList) - 1]:
+            print download
+            events = events + """{
+      			"start_date": {
+      				"month":\"""" + str(download[1][5:7]) + """\",
+      				"day": \"""" + str(download[1][8:10]) + """\",
+      				"year": \"""" + str(download[1][0:4]) + """\"
+      			},
+      				 "text": {
+        	  "headline": "URL:""" + download[4] + """\",
+        	  "text": \"""" + str(download[0]) + """\"
+      	  }
+    	  },
+		"""
+
+        events = events + """{
+      			"start_date": {
+      				"month": \"""" + str(reportList[len(reportList) - 1][1][5:7]) + """\",
+      				"day": \"""" + str(reportList[len(reportList) - 1][1][8:10]) + """\",
+      				"year": \"""" + str(reportList[len(reportList) - 1][1][0:4]) + """\"
+      			},
+      				 "text": {
+        	  "headline": "Last URL:""" + str(reportList[len(reportList) - 1][4]) + """\",
+        	  "text": \"""" + str(reportList[len(reportList) - 1][0]) + """\"
+      	  }
+    	  }
+		"""
+
+        events = events + """ ]
+	    }"""
+
+        json = json + events
+
+        jsonPath = myPath +"chromeHistory.json"
+        jsonFile = open(jsonPath, "w")
+        jsonFile.write(json)
+        jsonFile.close()
+
         self.internLog_.addLog("Chrome downloads report on " + fullPath, 1)
 
     def getChromePasswordsReport(self, dic, myPath):
@@ -87,7 +195,7 @@ class ProgramAnalyze(Process):
             urlList = []
 
         fullPath = myPath + "chromePasswords.csv"
-        ptest = pd.DataFrame(reportList , columns=['origin_url', 'username_value', 'password_value', 'date_created' ])
+        ptest = pd.DataFrame(reportList, columns=['origin_url', 'username_value', 'password_value', 'date_created'])
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
         self.internLog_.addLog("Chrome passwords report on " + fullPath, 1)
 
@@ -101,12 +209,12 @@ class ProgramAnalyze(Process):
                 string = dic['GetFirefoxPasswords'][entry][url]
                 splited = string.split(':')
                 urlList.append(splited[0])
-                urlList.append(splited[len(splited) - 1 ])
+                urlList.append(splited[len(splited) - 1])
                 reportList.append(urlList)
                 urlList = []
 
         fullPath = myPath + "fireFoxPasswords.csv"
-        ptest = pd.DataFrame(reportList , columns=['profile', 'url', 'username_value', 'password_value' ])
+        ptest = pd.DataFrame(reportList, columns=['profile', 'url', 'username_value', 'password_value'])
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
         self.internLog_.addLog("Firefox passwords report on " + fullPath, 1)
 
@@ -123,7 +231,7 @@ class ProgramAnalyze(Process):
                 urlList = []
 
         fullPath = myPath + "fireFoxHistory.csv"
-        ptest = pd.DataFrame(reportList , columns=['profile', 'url', 'last_visit_date', 'visit_count' ])
+        ptest = pd.DataFrame(reportList, columns=['profile', 'url', 'last_visit_date', 'visit_count'])
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
         self.internLog_.addLog("Firefox history report on " + fullPath, 1)
 
@@ -139,9 +247,8 @@ class ProgramAnalyze(Process):
                 reportList.append(urlList)
                 urlList = []
 
-
         fullPath = myPath + "fireFoxDownloads.csv"
-        ptest = pd.DataFrame(reportList , columns=['profile', 'pathfile', 'date', 'size' ])
+        ptest = pd.DataFrame(reportList, columns=['profile', 'pathfile', 'date', 'size'])
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
         self.internLog_.addLog("Firefox downloads report on " + fullPath, 1)
 
@@ -155,7 +262,7 @@ class ProgramAnalyze(Process):
             urlList = []
 
         fullPath = myPath + "wifi.csv"
-        ptest = pd.DataFrame(reportList , columns=['SSID', 'password'])
+        ptest = pd.DataFrame(reportList, columns=['SSID', 'password'])
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
         self.internLog_.addLog("Wifi report on " + fullPath, 1)
 
@@ -164,7 +271,7 @@ class ProgramAnalyze(Process):
         password = dic['GetOutlookPassword']['password']
 
         fullPath = myPath + "outlook.csv"
-        ptest = pd.DataFrame([ [user, password] ] , columns=['user', 'password'])
+        ptest = pd.DataFrame([[user, password]], columns=['user', 'password'])
         ptest.to_csv(fullPath, sep='\t', encoding='utf-8')
         self.internLog_.addLog("Outlook report on " + fullPath, 1)
 
@@ -283,5 +390,3 @@ class ProgramAnalyze(Process):
                         if wifiDic != None:
                             self.getWifiReport(wifiDic, myReportPath)
                         self.getReport(userInfos, myReportPath)
-
-

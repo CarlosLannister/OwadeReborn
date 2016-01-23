@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline Chrome</title>
+    <link title="timeline-styles" rel="stylesheet" href="//cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <script src="//cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+</head>
+<body>
+
+<div id='timeline-embed' style="width: 100%; height: 600px"></div>
+
+
+
+<div>
+  <button onclick="showDowload()">Show Download Timeline</button>
+  <button onclick="showVisits()">Show Visits Timeline</button>
+</div>
+
+<script>
+    function showVisits() {
+      var currentLocation = window.location;
+      currentLocation = currentLocation.pathname;
+      currentLocation = currentLocation.replace("/history","");
+
+      var url = "/chromeDownload";
+
+      window.timeline = new TL.Timeline('timeline-embed',url);
+
+    }
+
+    function showDowload() {
+       var currentLocation = window.location;
+      currentLocation = currentLocation.pathname;
+      currentLocation = currentLocation.replace("/history","");
+
+      var url = "/chromeHistory";
+
+      window.moveTo(100,100);
+      window.timeline2= new TL.Timeline('timeline-embed',url);
+    }
+</script>
+
+</body>
+</html>

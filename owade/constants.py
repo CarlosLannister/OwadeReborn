@@ -36,7 +36,7 @@ DATABASE_PORT='5432'
 ##Where to stock disk image after ddrescue
               #/media/USERNAME/HDNAME/
 #EXT_HDRIVE = subprocess.check_output("find /media -name storage", shell=True).rstrip()
-EXT_HDRIVE = "/media/hackaton/Lazarus/storage"
+EXT_HDRIVE = "/media/lannister/TOSHIBA EXT/storage"
 #Aqui metodo post
 
 IMAGE_DIR = EXT_HDRIVE + "/image"
