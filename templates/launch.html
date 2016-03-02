@@ -1,5 +1,23 @@
 {% extends "base.html" %}
 
+{% block pageTitle %}Check launched process{% endblock pageTitle %}
+
+{% block pageContent %}
+<div id="table-content">
+    <h2>Status</h2>
+    <h3>{{ status }}</h3>
+    <h2>Log</h2>
+    <div id="autoRefreshInternLog"></div>
+    <br />
+    <h2>Terminal Log</h2>
+    <div id="autoRefreshTerminalLog"></div>
+    <br />
+    <form action="launch" method="post">{% csrf_token %}
+        <input type="submit" value="Cancel" name="cancel" class="button_cancel" />
+    </form>
+</div>
+{% endblock pageContent %}
+
 {% block addScript %}
 <script type="text/javascript">
 $(document).ready(function() {
@@ -27,21 +45,3 @@ var refreshId = setInterval(function()
 }, 5000);
 </script>
 {% endblock addScript %}
-
-{% block pageTitle %}Check launched process{% endblock pageTitle %}
-
-{% block pageContent %}
-<div id="table-content">
-    <h2>Status</h2>
-    <h3>{{ status }}</h3>
-    <h2>Log</h2>
-    <div id="autoRefreshInternLog"></div>
-    <br />
-    <h2>Terminal Log</h2>
-    <div id="autoRefreshTerminalLog"></div>
-    <br />
-    <form action="launch" method="post">{% csrf_token %}
-        <input type="submit" value="Cancel" name="cancel" class="button_cancel" />
-    </form>
-</div>
-{% endblock pageContent %}

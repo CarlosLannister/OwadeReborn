@@ -15,6 +15,7 @@ from owade.fileAnalyze.firefox import GetFirefoxPasswords
 from owade.fileAnalyze.wifi import GetWifiPassword
 from owade.fileAnalyze.outlook import GetOutlookPassword
 import datetime
+import shutil
 
 
 class ProgramAnalyze(Process):
@@ -39,6 +40,7 @@ class ProgramAnalyze(Process):
         self.getFirefoxHistoryReport(dic, myPath)
         self.getFirefoxDownloadsReport(dic, myPath)
         self.getOutlookReport(dic, myPath)
+        shutil.copy2(TIMELINE_FILE , myPath + "timeline.html")
 
     def getChromeDownloadsReport(self, dic, myPath):
         urlList = []

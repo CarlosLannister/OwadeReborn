@@ -40,8 +40,125 @@ def indexView(request):
 
 def logoutView(request):
     logout(request)
-    return HttpResponseRedirect('login')
+    return HttpResponseRedirect('/admin')
 
+#Nuevas vistas owade reborn
+def loginView(request):
+    pass
+
+@login_required(login_url="/admin")
+def extractView(request):
+    class ExtractForm(forms.Form):
+        hardDrives = forms.ModelChoiceField(queryset=HardDrive.objects.all(), empty_label=None)
+        chromePasswords = forms.BooleanField(initial=True,required=False)
+        chromeHistory = forms.BooleanField(initial=True,required=False)
+        firefoxPassword = forms.BooleanField(initial=True,required=False)
+        firefoxHistory = forms.BooleanField(initial=True,required=False)
+        wifi = forms.BooleanField(initial=True,required=False)
+        outlook = forms.BooleanField(initial=True,required=False)
+
+    launch = False
+    if request.method == 'POST':
+        form = ExtractForm(request.POST)
+        if form.is_valid():
+            launch = True
+            hardDrive = form.cleaned_data['hardDrives']
+            task = '0'
+            report = False
+            chromePasswords = form.cleaned_data['chromePasswords']
+            chromeHistory = form.cleaned_data['chromeHistory']
+            firefoxPassword = form.cleaned_data['firefoxPassword']
+            firefoxHistory = form.cleaned_data['firefoxHistory']
+            wifi = form.cleaned_data['wifi']
+            outlook = form.cleaned_data['outlook']
+
+    else:
+        form = ExtractForm()
+
+    if launch:
+        if g_program.task(task, hardDrive, report, chromePasswords, chromeHistory,firefoxPassword,firefoxHistory, wifi, outlook):
+            return HttpResponseRedirect('launch')
+        else:
+            status = "Launch failure, a process is probably running"
+    else:
+        if g_program.available():
+            status = "Choose an hard drive to analyze"
+        else:
+            status = "A process is running, you may need to stop it"
+
+    return render_to_response("extract.html", {
+        'category':'Tasks',
+        'page':'Analyze',
+        'status':status,
+        'form': form,
+        'categoryList':categoryList,
+        }, context_instance=RequestContext(request))
+
+@login_required(login_url="/admin")
+def analizeView(request):
+    class AnalyzeForm(forms.Form):
+        hardDrives = forms.ModelChoiceField(queryset=HardDrive.objects.all(), empty_label=None)
+        report = forms.BooleanField(initial=False, required=False)
+        dictionary = forms.CharField(initial=HASHCAT_DIR + "/rockyou.txt",required=False)
+        chromePasswords = forms.BooleanField(initial=True,required=False)
+        chromeHistory = forms.BooleanField(initial=True,required=False)
+        firefoxPassword = forms.BooleanField(initial=True,required=False)
+        firefoxHistory = forms.BooleanField(initial=True,required=False)
+        wifi = forms.BooleanField(initial=True,required=False)
+        outlook = forms.BooleanField(initial=True,required=False)
+
+    launch = False
+    if request.method == 'POST':
+        form = AnalyzeForm(request.POST)
+        if form.is_valid():
+            launch = True
+            hardDrive = form.cleaned_data['hardDrives']
+            task = '5'
+            report = form.cleaned_data['report']
+            dictionary = form.cleaned_data['dictionary']
+            chromePasswords = form.cleaned_data['chromePasswords']
+            chromeHistory = form.cleaned_data['chromeHistory']
+            firefoxPassword = form.cleaned_data['firefoxPassword']
+            firefoxHistory = form.cleaned_data['firefoxHistory']
+            wifi = form.cleaned_data['wifi']
+            outlook = form.cleaned_data['outlook']
+
+    else:
+        form = AnalyzeForm()
+
+    if launch:
+        if g_program.task(task, hardDrive, report, dictionary, chromePasswords, chromeHistory,firefoxPassword,firefoxHistory, wifi, outlook):
+            return HttpResponseRedirect('launch')
+        else:
+            status = "Launch failure, a process is probably running"
+    else:
+        if g_program.available():
+            status = "Choose an hard drive to analyze"
+        else:
+            status = "A process is running, you may need to stop it"
+
+    return render_to_response("analyze.html", {
+        'category':'Tasks',
+        'page':'Analyze',
+        'status':status,
+        'form': form,
+        'categoryList':categoryList,
+        }, context_instance=RequestContext(request))
+
+@login_required(login_url="/admin")
+def timelineView(request):
+    return render_to_response("index.html", {
+        }, context_instance=RequestContext(request))
+
+@login_required(login_url="/admin")
+def settingsView(request):
+    return render_to_response("index.html", {
+        }, context_instance=RequestContext(request))
+
+@login_required(login_url="/admin")
+def helpView(request):
+    return render_to_response("index.html", {
+        }, context_instance=RequestContext(request))
 
 
 ###############################################

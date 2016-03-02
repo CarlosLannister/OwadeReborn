@@ -1,85 +1,102 @@
-{% extends "struct.html" %}
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
 
-{% block title %}{{ category }}{% if page != 'Main' %} - {{ page }}{% endif %}{% endblock title %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../favicon.ico">-->
 
-{% block pageTitle %}{% if page != 'Main' %}{{ page }}{% else %}{{ category }}{% endif %}{% endblock pageTitle %}
-{%  load staticfiles %}
-<!--  start topSearch..................................................... -->
-{% block topSearch %}
-<!--
-<div id="top-search">
-        <table border="0" cellpadding="0" cellspacing="0">
-        <tr>
-        <td><input type="text" value="Search" onblur="if (this.value=='') { this.value='Search'; }" onfocus="if (this.value=='Search') { this.value=''; }" class="top-search-inp" /></td>
-        <td>
-        <select  class="styledselect">
-                <option value=""> All</option>
-                <option value=""> Products</option>
-                <option value=""> Categories</option>
-                <option value="">Clients</option>
-                <option value="">News</option>
-        </select>
-        </td>
-        <td>
-        <input type="image" src="images/shared/top_search_btn.gif"  />
-        </td>
-        </tr>
-        </table>
-</div>
--->
-{% endblock topSearch %}
+    <title>Owade Reborn</title>
 
-<!--  start accountContent..................................................... -->
-{% block accountContent %}
-<!--
-<div class="account-drop-inner">
-        <a href="" id="acc-settings">Settings</a>
-        <div class="clear">&nbsp;</div>
-        <div class="acc-line">&nbsp;</div>
-        <a href="" id="acc-details">Personal details </a>
-        <div class="clear">&nbsp;</div>
-        <div class="acc-line">&nbsp;</div>
-        <a href="" id="acc-project">Project details</a>
-        <div class="clear">&nbsp;</div>
-        <div class="acc-line">&nbsp;</div>
-        <a href="" id="acc-inbox">Inbox</a>
-        <div class="clear">&nbsp;</div>
-        <div class="acc-line">&nbsp;</div>
-        <a href="" id="acc-stats">Statistics</a>
-</div>
--->
-{% endblock accountContent %}
+    <!-- Bootstrap core CSS -->
+    <link href="{{ STATIC_PREFIX }}/css/bootstrap.min.css" rel="stylesheet">
 
-<!--  start navMenu..................................................... -->
-{% block navMenu %}
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{{ STATIC_PREFIX }}/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-{% for curCategory in categoryList %}
-<ul {% if category == curCategory.name %}class="current"{% else %}class="select"{% endif %}><li>
-<a href="{{ curCategory.address }}">
-<b>{{ curCategory.name }}</b>
-<!--[if IE 7]><!--></a><!--<![endif]-->
-<!--[if lte IE 6]><table><tr><td><![endif]-->
-<div {% if category == curCategory.name %}class="select_sub show"{% else %}class="select_sub"{% endif %}>
-        <ul class="sub">
-            <li {% if page == 'Main' %}class="sub_show"{% endif %}>
-                <a href="{{ curCategory.address }}">{{ curCategory.name }}</a>
-            </li>
-            {% for curPage in curCategory.pages %}
-            <li {% if page == curPage.name %}class="sub_show"{% endif %}>
-                <a href="{{ curPage.address }}">{{ curPage.name }}</a>
-            </li>
-            {% endfor %}
-        </ul>
-</div>
-<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-</li>
-</ul>
-<div class="nav-divider">&nbsp;</div>
-{% endfor %}
+    <!-- Custom styles for this template -->
+    <link href="{{ STATIC_PREFIX }}/css/dashboard.css" rel="stylesheet">
 
-{% endblock navMenu %}
+    <script src="{{ STATIC_PREFIX }}/js/ie-emulation-modes-warning.js"></script>
 
-<!--  start footerContent..................................................... -->
-{% block footerContent %}
-Owade <a href="">http://www.owade.org</a>
-{% endblock footerContent %}
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index">OWADE REBORN</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index">Dashboard</a></li>
+            <li><a href="settings">Settings</a></li>
+            <li><a href="help">Help</a></li>
+            <li><a href="logout">Log out</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li id="overview"><a href="index">Overview</a></li>
+            <li id="extract"><a href="extract">Extract Files</a></li>
+            <li id="analyze"><a href="analyze">Program Analyze</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="timeline">Timeline</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <!-- Start of page tittle-->
+            {% block pageTitle %}
+            {% endblock pageTitle %}
+            <!-- End of page content-->
+
+            <!-- Start of page content-->
+            {% block pageContent %}
+            {% endblock pageContent %}
+            <!-- End of page content-->
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ STATIC_PREFIX }}/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{{ STATIC_PREFIX }}/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="{{ STATIC_PREFIX }}/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{ STATIC_PREFIX }}/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        var url = window.location;
+        // Will only work if string in href matches with location
+        $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+
+        // Will also work for relative and absolute hrefs
+        $('ul.nav a').filter(function() {
+            return this.href == url;
+        }).parent().addClass('active');
+    </script>
+
+    {% block addScript %}
+    {% endblock addScript %}
+
+  </body>
+</html>

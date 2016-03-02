@@ -22,10 +22,23 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     #(r'^$', 'indexView'),
     #(r'^index$', 'indexView'),
-    url(r'^$', views.resultView),
-    url(r'^index$', views.resultView),
+
+
+    #Direcciones nuevas
+    url(r'^$', views.indexView),
+    url(r'^index$', views.indexView),
+    url(r'^login$', views.loginView),
+
+    url(r'^extract$', views.extractView),
+    url(r'^analyze$', views.analizeView),
+    url(r'^timeline$', views.timelineView),
+
+    url(r'^settings$', views.settingsView),
+    url(r'^help$', views.helpView),
     url(r'^logout$', views.logoutView),
 
+    #Direcciones antiguas
+    url(r'^results', views.resultView),
     url(r'^launch$', views.launchView),
     url(r'^launch_new$', views.launchNewView),
     url(r'^launch_analyze$', views.launchAnalyze),
