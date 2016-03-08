@@ -22,7 +22,7 @@ checkConstant(PROJECT_DIR + PROJECT_NAME)
 
 
 TIMELINE_FILE = PROJECT_DIR + PROJECT_NAME + "templates/timeline.html"
-HASHCAT_DIR = PROJECT_DIR + PROJECT_NAME + "owade/fileAnalyze/hashcatLib/hashcat"
+HASHCAT_DIR = PROJECT_DIR + PROJECT_NAME + "owade/hashcatLib/hashcat"
 #################
 ### DATABASE CONFIGURATION
 #################
@@ -53,9 +53,7 @@ checkConstant(FILE_DIR)
 #################
 ### DJANGO DIR (shouldn't be modified)
 #################
-##Where to save the database
-DATABASE_DIR = PROJECT_DIR + "OwadeReborn/database/"
-checkConstant(DATABASE_DIR)
+
 ##Where to find the template
 TEMPLATE_DIR = PROJECT_DIR + "OwadeReborn/templates/"
 checkConstant(TEMPLATE_DIR)
