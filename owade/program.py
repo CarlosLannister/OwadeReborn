@@ -21,12 +21,8 @@ __date__ ="$Jun 2, 2011 6:56:43 PM$"
 
 
 from owade.process import Process
-from owade.fileExtraction.getFiles import GetFiles
-from owade.fileAnalyze.windowsRegistery import WindowsRegistery
-from owade.fileAnalyze.filesStatistics import FilesStatistics
-from owade.fileAnalyze.userPassword import UserPassword
-from owade.fileAnalyze.programAnalyze import ProgramAnalyze
-from owade.webAnalyze.webAnalyze import WebAnalyze
+from owade.fileExtractor.extract import GetFiles
+from owade.fileAnalyzer.programAnalyze import ProgramAnalyze
 from owade.log import Log
 
 

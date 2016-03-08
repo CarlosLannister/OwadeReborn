@@ -20,6 +20,7 @@ PROJECT_DIR = "/opt/"
 PROJECT_NAME = "OwadeReborn/"
 checkConstant(PROJECT_DIR + PROJECT_NAME)
 
+
 TIMELINE_FILE = PROJECT_DIR + PROJECT_NAME + "templates/timeline.html"
 HASHCAT_DIR = PROJECT_DIR + PROJECT_NAME + "owade/fileAnalyze/hashcatLib/hashcat"
 #################
@@ -37,7 +38,8 @@ DATABASE_PORT='5432'
 ##Where to stock disk image after ddrescue
               #/media/USERNAME/HDNAME/
 #EXT_HDRIVE = subprocess.check_output("find /media -name storage", shell=True).rstrip()
-EXT_HDRIVE = "/media/hackaton/TOSHIBA EXT/storage"
+
+EXT_HDRIVE = "/media/lannister/TOSHIBA EXT/storage"
 #Aqui metodo post
 
 IMAGE_DIR = EXT_HDRIVE + "/image"
