@@ -14,6 +14,7 @@ from django.shortcuts import render_to_response
 from owade.program import Program
 from owade.models import HardDrive, Partition
 from owade.constants import HASHCAT_DIR
+from django.contrib.auth import logout
 
 categoryList = [
         #{'name':'Index','address':'index','pages':[]},
@@ -49,7 +50,7 @@ def index(request):
             }
         return render(request, "index.html", context)
 
-
+@login_required(redirect_field_name='/')
 def extractView(request):
     class ExtractForm(forms.Form):
         hardDrives = forms.ModelChoiceField(queryset=HardDrive.objects.all(), empty_label=None)
@@ -97,6 +98,7 @@ def extractView(request):
         'categoryList':categoryList,
         }, context_instance=RequestContext(request))
 
+@login_required(redirect_field_name='/')
 def analizeView(request):
     class AnalyzeForm(forms.Form):
         hardDrives = forms.ModelChoiceField(queryset=HardDrive.objects.all(), empty_label=None)
@@ -147,6 +149,7 @@ def analizeView(request):
         'categoryList':categoryList,
         }, context_instance=RequestContext(request))
 
+@login_required(redirect_field_name='/')
 def launchView(request):
     if request.method == 'POST'and request.POST.get("cancel") != None:
         if g_program.interupt():
@@ -166,18 +169,44 @@ def launchView(request):
         'categoryList':categoryList,
         }, context_instance=RequestContext(request))
 
+
+
+@login_required(redirect_field_name='/')
+def overviewView(request):
+    return render_to_response("index.html", {
+        }, context_instance=RequestContext(request))
+
+@login_required(redirect_field_name='/')
+def timelineView(request):
+    return render_to_response("index.html", {
+        }, context_instance=RequestContext(request))
+
+@login_required(redirect_field_name='/')
+def settingsView(request):
+    return render_to_response("settings.html", {
+        }, context_instance=RequestContext(request))
+
+@login_required(redirect_field_name='/')
+def helpView(request):
+    return render_to_response("help.html", {
+        }, context_instance=RequestContext(request))
+
+def logoutView(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
 ###############################################
 ##### Launch Process
 ###############################################
 
-@login_required(login_url="/admin")
+@login_required(redirect_field_name='/')
 def refreshInternLogView(request):
     log = g_program.internLog_.getLog()
     return render_to_response("refresh_log.html", {
         'log':log,
         }, context_instance=RequestContext(request))
 
-@login_required(login_url="/admin")
+@login_required(redirect_field_name='/')
 def refreshTerminalLogView(request):
     log = g_program.terminalLog_.getLog()
     return render_to_response("refresh_log.html", {

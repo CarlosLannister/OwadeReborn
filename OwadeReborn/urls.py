@@ -21,12 +21,18 @@ import owade.views as views
 
 urlpatterns = [
     url(r'^login', admin.site.urls),
-    url(r'^$', views.index , name='index'),
+    url(r'^$', views.index, name='index'),
     url(r'^$', RedirectView.as_view(url='/'), name='index'),
     url(r'^extract$', views.extractView),
     url(r'^analyze$', views.analizeView),
     url(r'^launch$', views.launchView),
     url(r'^refresh_intern_log$', views.refreshInternLogView),
     url(r'^refresh_terminal_log$', views.refreshTerminalLogView),
+
+    url(r'^overview$', views.overviewView),
+    url(r'^timeline$', views.timelineView),
+    url(r'^settings$', views.settingsView),
+    url(r'^help$', views.helpView),
+    url(r'^logout$', views.logoutView),
 
 ]

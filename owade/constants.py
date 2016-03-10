@@ -44,10 +44,10 @@ EXT_HDRIVE = "/media/lannister/TOSHIBA EXT/storage"
 
 IMAGE_DIR = EXT_HDRIVE + "/image"
 IMAGE_FTP = EXT_HDRIVE + "/ftp"
-checkConstant(IMAGE_DIR)
+#checkConstant(IMAGE_DIR)
 ##Where to stock files
 FILE_DIR = EXT_HDRIVE + "/file"
-checkConstant(FILE_DIR)
+#checkConstant(FILE_DIR)
 
 
 #################
