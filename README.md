@@ -1,4 +1,4 @@
-##OwadeReborn
+##Owade Reborn
 
 * carlos.cilleruelo@edu.uah.es
 * david.martinb@edu.uah.es
