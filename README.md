@@ -1,4 +1,6 @@
 ##Owade Reborn
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCarlosLannister%2FOwadeReborn.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FCarlosLannister%2FOwadeReborn?ref=badge_shield)
+
 
 * carlos.cilleruelo@edu.uah.es
 * david.martinb@edu.uah.es
@@ -32,3 +34,7 @@ The aplication gets:
 * Dropbox passwords
 
 The main target for this tool is helping forensic community who knows little or nothing about computing and makes faster the process of extract evidences.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FCarlosLannister%2FOwadeReborn.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FCarlosLannister%2FOwadeReborn?ref=badge_large)
